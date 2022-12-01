@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>My New Hugo Site</title>
+        <link>http://xxxVitoxxx.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Dec 2022 01:38:08 &#43;0800</lastBuildDate>
+            <atom:link href="http://xxxVitoxxx.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>First</title>
+    <link>http://xxxVitoxxx.github.io/posts/first/</link>
+    <pubDate>Fri, 02 Dec 2022 01:38:08 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://xxxVitoxxx.github.io/posts/first/</guid>
+    <description><![CDATA[this my first hugo post]]></description>
+</item>
+</channel>
+</rss>
