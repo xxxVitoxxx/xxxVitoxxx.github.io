@@ -3,61 +3,43 @@
         <title>All Posts - vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/posts/</link>
         <description>All Posts | vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 01 Oct 2022 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>stack</title>
-    <link>https://xxxVitoxxx.github.io/stack/</link>
-    <pubDate>Sat, 01 Oct 2022 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/stack/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>b-tree</title>
-    <link>https://xxxVitoxxx.github.io/b-tree/</link>
-    <pubDate>Tue, 09 Aug 2022 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/b-tree/</guid>
-    <description><![CDATA[<p>say hello</p>]]></description>
-</item>
-<item>
-    <title>DFS</title>
-    <link>https://xxxVitoxxx.github.io/dfs/</link>
-    <pubDate>Sat, 09 Jul 2022 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/dfs/</guid>
-    <description><![CDATA[depth first search DFS]]></description>
-</item>
-<item>
-    <title>queue</title>
-    <link>https://xxxVitoxxx.github.io/queue/</link>
-    <pubDate>Wed, 09 Mar 2022 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/queue/</guid>
-    <description><![CDATA[fucking ddd]]></description>
-</item>
-<item>
-    <title>article</title>
-    <link>https://xxxVitoxxx.github.io/basic-markdown-syntax/</link>
-    <pubDate>Sat, 01 Jan 2022 21:57:40 &#43;0800</pubDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 17 May 2021 17:58:14 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Git Clone With SSH Key</title>
+    <link>https://xxxVitoxxx.github.io/git-clone-ssh-key/</link>
+    <pubDate>Mon, 17 May 2021 17:58:14 &#43;0800</pubDate>
     <author>vito</author>
-    <guid>https://xxxVitoxxx.github.io/basic-markdown-syntax/</guid>
-    <description><![CDATA[<p>Emoji can be enabled in a Hugo project in a number of ways.</p>]]></description>
-</item>
-<item>
-    <title>binary search tree</title>
-    <link>https://xxxVitoxxx.github.io/binary-search-tree/</link>
-    <pubDate>Thu, 09 Sep 2021 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/binary-search-tree/</guid>
-    <description><![CDATA[binary search tree BST]]></description>
-</item>
-<item>
-    <title>bbb-tree</title>
-    <link>https://xxxVitoxxx.github.io/bbb-tree/</link>
-    <pubDate>Sat, 09 Jan 2021 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://xxxVitoxxx.github.io/bbb-tree/</guid>
-    <description><![CDATA[haaaa]]></description>
+    <guid>https://xxxVitoxxx.github.io/git-clone-ssh-key/</guid>
+    <description><![CDATA[GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。
+如何透過ssh連結GitHub 第一步：依作業系統下載對應的Git(本示範系統是macos)
+(或透過Homebrew download: $ brew install git)
+第二步：產生金鑰
+$ ssh-keygen -t rsa -b 4096 -C ' your id '
+用ssh-keygen建立金鑰
+系統會請你輸入通行碼(若沒輸入直接回車，之後clone就不用輸入密碼)
+再輸入一次通行碼後會顯示ssh的公鑰及私鑰路徑檔名
+第三步：
+將id_rsa.pub(公鑰)的內容新增到GitHub的Settings的SSH keys
+(公鑰的內容)
+$ cat ./.ssh/id_rsa.pub
+點擊Add就大功告成！！！
+clone 第一步：先在終端機進到你要建立專案的地方。
+$ cd 要建立專案的地方
+第二步：clone 專案到本機
+$ get clone '專案ssh網址'
+第三部：輸入通行碼(若當初有設定的話)
+下圖表示成功將專案裡的檔案clone到主機
+clone下來的資料夾名稱會是你的GitHub的repository名稱
+push 第一步：示範新增一個名為README.md的檔案
+並將新檔案丟到專案(xxxVitoxxx.github.io)的資料夾裡，並cd到專案的資料夾
+第二步：確認專案的資料夾做了哪些更動
+$ git status
+(紅色字體代表有更改過的檔案)
+第三步：將新增的檔案加到Git版本控管
+$ git add .
+(注意！！！這邊只是將專案資料夾的所有檔案加到Git工作目錄的索引中，尚未加到Git版本庫)。
+可以再輸入一次 $ git status 確認專案資料夾的檔案是否已成功更新(綠色字體代表成功更新檔案)
+第四步：為修改記錄命名一個名稱
+$ git commit -m &quot;commit message&quot;]]></description>
 </item>
 </channel>
 </rss>
