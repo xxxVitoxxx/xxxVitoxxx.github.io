@@ -3,15 +3,7 @@
         <title>All Posts - vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/posts/</link>
         <description>All Posts | vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Dec 2022 21:31:53 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>First_post</title>
-    <link>https://xxxVitoxxx.github.io/first_post/</link>
-    <pubDate>Fri, 02 Dec 2022 21:31:53 &#43;0800</pubDate>
-    <author>vito</author>
-    <guid>https://xxxVitoxxx.github.io/first_post/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 17 May 2021 17:58:14 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Git Clone With SSH Key</title>
     <link>https://xxxVitoxxx.github.io/git-clone-ssh-key/</link>
     <pubDate>Mon, 17 May 2021 17:58:14 &#43;0800</pubDate>
