@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>data structure - Category - vito&#39;s blog</title>
+        <link>https://xxxVitoxxx.github.io/categories/data-structure/</link>
+        <description>data structure - Category - vito&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 01 Oct 2022 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/categories/data-structure/" rel="self" type="application/rss+xml" /><item>
+    <title>stack</title>
+    <link>https://xxxVitoxxx.github.io/stack/</link>
+    <pubDate>Sat, 01 Oct 2022 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/stack/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>b-tree</title>
+    <link>https://xxxVitoxxx.github.io/b-tree/</link>
+    <pubDate>Tue, 09 Aug 2022 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/b-tree/</guid>
+    <description><![CDATA[<p>say hello</p>]]></description>
+</item>
+<item>
+    <title>DFS</title>
+    <link>https://xxxVitoxxx.github.io/dfs/</link>
+    <pubDate>Sat, 09 Jul 2022 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/dfs/</guid>
+    <description><![CDATA[depth first search DFS]]></description>
+</item>
+<item>
+    <title>queue</title>
+    <link>https://xxxVitoxxx.github.io/queue/</link>
+    <pubDate>Wed, 09 Mar 2022 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/queue/</guid>
+    <description><![CDATA[fucking ddd]]></description>
+</item>
+<item>
+    <title>binary search tree</title>
+    <link>https://xxxVitoxxx.github.io/binary-search-tree/</link>
+    <pubDate>Thu, 09 Sep 2021 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/binary-search-tree/</guid>
+    <description><![CDATA[binary search tree BST]]></description>
+</item>
+<item>
+    <title>bbb-tree</title>
+    <link>https://xxxVitoxxx.github.io/bbb-tree/</link>
+    <pubDate>Sat, 09 Jan 2021 21:57:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://xxxVitoxxx.github.io/bbb-tree/</guid>
+    <description><![CDATA[haaaa]]></description>
+</item>
+</channel>
+</rss>
