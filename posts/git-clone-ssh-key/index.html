@@ -5,76 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Git Clone With SSH Key - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="Git Clone With SSH Key" />
-<meta property="og:description" content="GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。
-如何透過ssh連結GitHub 第一步：依作業系統下載對應的Git(本示範系統是macos)
-(或透過Homebrew download: $ brew install git)
-第二步：產生金鑰
-$ ssh-keygen -t rsa -b 4096 -C &#39; your id &#39;
-用ssh-keygen建立金鑰
-系統會請你輸入通行碼(若沒輸入直接回車，之後clone就不用輸入密碼)
-再輸入一次通行碼後會顯示ssh的公鑰及私鑰路徑檔名
-第三步：
-將id_rsa.pub(公鑰)的內容新增到GitHub的Settings的SSH keys
-(公鑰的內容)
-$ cat ./.ssh/id_rsa.pub
-點擊Add就大功告成！！！
-clone 第一步：先在終端機進到你要建立專案的地方。
-$ cd 要建立專案的地方
-第二步：clone 專案到本機
-$ get clone &#39;專案ssh網址&#39;
-第三部：輸入通行碼(若當初有設定的話)
-下圖表示成功將專案裡的檔案clone到主機
-clone下來的資料夾名稱會是你的GitHub的repository名稱
-push 第一步：示範新增一個名為README.md的檔案
-並將新檔案丟到專案(xxxVitoxxx.github.io)的資料夾裡，並cd到專案的資料夾
-第二步：確認專案的資料夾做了哪些更動
-$ git status
-(紅色字體代表有更改過的檔案)
-第三步：將新增的檔案加到Git版本控管
-$ git add .
-(注意！！！這邊只是將專案資料夾的所有檔案加到Git工作目錄的索引中，尚未加到Git版本庫)。
-可以再輸入一次 $ git status 確認專案資料夾的檔案是否已成功更新(綠色字體代表成功更新檔案)
-第四步：為修改記錄命名一個名稱
-$ git commit -m &quot;commit message&quot;" />
+<meta property="og:description" content="建立 ssh key 和 git clone 、 git push 教學" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/featured_image.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-17T17:58:14+08:00" />
 <meta property="article:modified_time" content="2021-05-17T17:58:14+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/featured_image.png"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/git-clone-ssh-key/featured-image.png"/>
 <meta name="twitter:title" content="Git Clone With SSH Key"/>
-<meta name="twitter:description" content="GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。
-如何透過ssh連結GitHub 第一步：依作業系統下載對應的Git(本示範系統是macos)
-(或透過Homebrew download: $ brew install git)
-第二步：產生金鑰
-$ ssh-keygen -t rsa -b 4096 -C &#39; your id &#39;
-用ssh-keygen建立金鑰
-系統會請你輸入通行碼(若沒輸入直接回車，之後clone就不用輸入密碼)
-再輸入一次通行碼後會顯示ssh的公鑰及私鑰路徑檔名
-第三步：
-將id_rsa.pub(公鑰)的內容新增到GitHub的Settings的SSH keys
-(公鑰的內容)
-$ cat ./.ssh/id_rsa.pub
-點擊Add就大功告成！！！
-clone 第一步：先在終端機進到你要建立專案的地方。
-$ cd 要建立專案的地方
-第二步：clone 專案到本機
-$ get clone &#39;專案ssh網址&#39;
-第三部：輸入通行碼(若當初有設定的話)
-下圖表示成功將專案裡的檔案clone到主機
-clone下來的資料夾名稱會是你的GitHub的repository名稱
-push 第一步：示範新增一個名為README.md的檔案
-並將新檔案丟到專案(xxxVitoxxx.github.io)的資料夾裡，並cd到專案的資料夾
-第二步：確認專案的資料夾做了哪些更動
-$ git status
-(紅色字體代表有更改過的檔案)
-第三步：將新增的檔案加到Git版本控管
-$ git add .
-(注意！！！這邊只是將專案資料夾的所有檔案加到Git工作目錄的索引中，尚未加到Git版本庫)。
-可以再輸入一次 $ git status 確認專案資料夾的檔案是否已成功更新(綠色字體代表成功更新檔案)
-第四步：為修改記錄命名一個名稱
-$ git commit -m &quot;commit message&quot;"/>
+<meta name="twitter:description" content="建立 ssh key 和 git clone 、 git push 教學"/>
 <meta name="application-name" content="vito&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -89,7 +29,12 @@ $ git commit -m &quot;commit message&quot;"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/xxxVitoxxx.github.io\/git-clone-ssh-key\/"
-        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ssh key","wordcount":  84 ,
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/xxxVitoxxx.github.io\/git-clone-ssh-key\/featured-image.png",
+                            "width":  6000 ,
+                            "height":  4000 
+                        }],"genre": "posts","keywords": "ssh key","wordcount":  94 ,
         "url": "https:\/\/xxxVitoxxx.github.io\/git-clone-ssh-key\/","datePublished": "2021-05-17T17:58:14+08:00","dateModified": "2021-05-17T17:58:14+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "vito","logo": {
@@ -168,9 +113,16 @@ $ git commit -m &quot;commit message&quot;"/>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git Clone With SSH Key</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-17">2021-05-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;84 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-17">2021-05-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;94 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/git-clone-ssh-key/featured-image.png"
+        data-srcset="/git-clone-ssh-key/featured-image.png, /git-clone-ssh-key/featured-image.png 1.5x, /git-clone-ssh-key/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/git-clone-ssh-key/featured-image.png"
+        title="/git-clone-ssh-key/featured-image.png" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
@@ -182,7 +134,8 @@ $ git commit -m &quot;commit message&quot;"/>
     <li><a href="#push">push</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。</p>
+            </div><div class="content" id="content"><p>建立 ssh key 和 git clone 、 git push 教學</p>
+<p>GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。</p>
 <h2 id="如何透過ssh連結github">如何透過ssh連結GitHub</h2>
 <p>第一步：依作業系統下載對應的<a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer ">Git</a>(本示範系統是macos)</p>
 <p><img
@@ -383,8 +336,7 @@ $ git commit -m &quot;commit message&quot;"/>
         data-srcset="https://imgur.com/s42oNdu.png, https://imgur.com/s42oNdu.png 1.5x, https://imgur.com/s42oNdu.png 2x"
         data-sizes="auto"
         alt="https://imgur.com/s42oNdu.png"
-        title="git push" /></p>
-</div><div class="post-footer" id="post-footer">
+        title="git push" /></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

@@ -1,5 +1,0 @@
-# Emoji
-
-# hello
-
-say hi

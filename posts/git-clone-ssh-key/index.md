@@ -1,5 +1,8 @@
 # Git Clone With SSH Key
 
+建立 ssh key 和 git clone 、 git push 教學
+<!--more-->
+
 GitHub 提供了兩種連線方式，分別是https與ssh，兩者最大的差別在於ssh可以立刻上傳，不需要輸入密碼，且安全性高。  
 
 ## 如何透過ssh連結GitHub
@@ -119,3 +122,4 @@ clone下來的資料夾名稱會是你的GitHub的repository名稱
 將剛剛新增的檔案推到GitHub上  
 
 ![git push](https://imgur.com/s42oNdu.png)  
+
