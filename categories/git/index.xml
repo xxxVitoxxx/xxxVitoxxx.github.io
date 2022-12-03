@@ -9,7 +9,9 @@
     <pubDate>Mon, 17 May 2021 17:58:14 &#43;0800</pubDate>
     <author>vito</author>
     <guid>https://xxxVitoxxx.github.io/git-clone-ssh-key/</guid>
-    <description><![CDATA[<p>建立 ssh key 和 git clone 、 git push 教學</p>]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>建立 ssh key 和 git clone 、 git push 教學</p>]]></description>
 </item>
 </channel>
 </rss>
