@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Stack - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="Stack" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/stack/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/stack/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-29T01:29:12+08:00" />
+<meta property="article:modified_time" content="2022-11-29T01:29:12+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/stack/featured-image.png"/>
+<meta name="twitter:title" content="Stack"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/stack/" /><link rel="prev" href="https://xxxVitoxxx.github.io/instagram-basic/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Stack",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/stack\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "stack, data structure","wordcount":  565 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/stack\/","datePublished": "2022-11-29T01:29:12+08:00","dateModified": "2022-11-29T01:29:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Stack</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-structure/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>data structure</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-29">2022-11-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;565 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/stack/featured-image.png"
+        data-srcset="/stack/featured-image.png, /stack/featured-image.png 1.5x, /stack/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/stack/featured-image.png"
+        title="/stack/featured-image.png" width="5472" height="3648" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#implement-of-the-stack-in-golang">Implement of the stack in golang</a>
+      <ul>
+        <li><a href="#slice-based-stack">slice based stack</a></li>
+      </ul>
+    </li>
+    <li><a href="#application-of-stack-in-data-structure">application of stack in data structure</a>
+      <ul>
+        <li><a href="#1-parentheses-checking">1. Parentheses Checking</a></li>
+        <li><a href="#2-expression-evaluation-and-conversion">2. Expression Evaluation and Conversion</a>
+          <ul>
+            <li><a href="#evaluation">Evaluation</a></li>
+            <li><a href="#conversion">Conversion</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-backtracking">3. Backtracking</a>
+          <ul>
+            <li><a href="#8-queens-problem">8 queens problem</a></li>
+            <li><a href="#sudoku">Sudoku</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-string-reversal">4. String Reversal</a></li>
+        <li><a href="#5-towers-of-hanoi">5. Towers of Hanoi</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>stack 是一種線性的資料結構，其新增資料或刪除資料都在同一端，這意味著，若你想刪除第一筆資料，就得先從最後一筆資料開始依序刪除。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/lTGIbl5.png"
+        data-srcset="https://imgur.com/lTGIbl5.png, https://imgur.com/lTGIbl5.png 1.5x, https://imgur.com/lTGIbl5.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/lTGIbl5.png"
+        title="info" /></p>
+<p>遵循後進先出（LIFO, Last-in-First-out）或先進後出（FILO, First-in-Last-out）原則，像疊盤子，假設一次只能拿一個盤子，若你想疊盤子，就只能疊在最上面;若想拿到最下面的盤子，就得先從最上面的盤子開始一個一個拿走。</p>
+<p>因 stack 特性，需實作以下幾種基本操作：</p>
+<ul>
+<li>Push: 新增資料到 stack 的頂端（top）</li>
+<li>Pop: 移除 stack 中頂端（top）的資料</li>
+<li>Peek: 取得頂端（top）的資料</li>
+</ul>
+<p>並實作以下幾種操作輔助：</p>
+<ul>
+<li>IsEmpty: 檢查 stack 是否為空</li>
+<li>IsFull: 檢查 stack 是否被填滿（當 stack 是有長度限制才需要實作）</li>
+<li>Size: stack 大小</li>
+<li>Print: 印出 stack 資料</li>
+</ul>
+<p><strong>Push operation</strong></p>
+<p>這是在 stack 實現 Push 操作的圖形說明，它展示了當資料被新增到 stack 時， stack 如何由左至右增長。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/ocbmdFs.png"
+        data-srcset="https://imgur.com/ocbmdFs.png, https://imgur.com/ocbmdFs.png 1.5x, https://imgur.com/ocbmdFs.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/ocbmdFs.png"
+        title="push" /></p>
+<p><strong>Pop operation</strong></p>
+<p>這是在 stack 實現 Pop 操作的圖形說明，它展示了當資料從 stack 被移除時， stack 如何由左至右減少。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/u54q5tI.png"
+        data-srcset="https://imgur.com/u54q5tI.png, https://imgur.com/u54q5tI.png 1.5x, https://imgur.com/u54q5tI.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/u54q5tI.png"
+        title="pop" /></p>
+<h2 id="implement-of-the-stack-in-golang">Implement of the stack in golang</h2>
+<p>可以用 <a href="./slice.go" rel="">slice</a> 與 <a href="./linked_list.go" rel="">linked list</a> 實作 stack，這邊用 slice 示範如何實作。</p>
+<h3 id="slice-based-stack">slice based stack</h3>
+<p><strong>Declaring stack</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">type StackSlice struct {
+</span></span><span class="line"><span class="cl">    top      int
+</span></span><span class="line"><span class="cl">    capacity int
+</span></span><span class="line"><span class="cl">    stack    []int
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func NewStackSlice(capacity int) *StackSlice {
+</span></span><span class="line"><span class="cl">    return &amp;StackSlice{
+</span></span><span class="line"><span class="cl">        top:      -1,
+</span></span><span class="line"><span class="cl">        capacity: capacity,
+</span></span><span class="line"><span class="cl">        stack:    make([]int, 0, capacity),
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>stack 結構有以下三種屬性：</p>
+<ol>
+<li><strong>top</strong>: stack 中最後一筆資料的位置（當沒有資料時; top 為 -1）</li>
+<li><strong>capacity</strong>: stack 的大小</li>
+<li><strong>stack</strong>: int 屬性的 slice</li>
+</ol>
+<p><strong>Implementing a IsEmpty operation</strong></p>
+<p>檢查 stack 是否有資料。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) IsEmpty() bool {
+</span></span><span class="line"><span class="cl">    return s.top == -1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Implementing a IsFull operation</strong></p>
+<p>檢查 stack 是否還有空間可以存放資料。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) IsFull() bool {
+</span></span><span class="line"><span class="cl">    return s.top+1 == s.capacity
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Implementing a Size operation</strong></p>
+<p>回傳 stack 大小。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Size() int {
+</span></span><span class="line"><span class="cl">    return s.top + 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Implementing a Peek operation</strong></p>
+<p>回傳 stack 最後一筆資料。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Peek() (int, error) {
+</span></span><span class="line"><span class="cl">    if s.IsEmpty() {
+</span></span><span class="line"><span class="cl">        return 0, errors.New(&#34;stack underflow&#34;)
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return s.stack[s.top], nil
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Implementing a Print operation</strong></p>
+<p>印出 stack 中所有資料。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Print() {
+</span></span><span class="line"><span class="cl">    for i := 0; i &lt;= s.top; i++ {
+</span></span><span class="line"><span class="cl">        fmt.Printf(&#34;%d  &#34;, s.stack[i])
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    fmt.Println()
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Implementing a Push operation</strong></p>
+<p>新增資料到 stack</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Push(data int) error {
+</span></span><span class="line"><span class="cl">    if s.IsFull() {
+</span></span><span class="line"><span class="cl">        return errors.New(&#34;stack overflow&#34;)
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    s.top++
+</span></span><span class="line"><span class="cl">    s.stack[s.top] = data
+</span></span><span class="line"><span class="cl">    return nil
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Push 實現的方法如下所述：</p>
+<ol>
+<li>第 2 行： 先檢查 stack 是否還有空間可以存放資料。</li>
+<li>第 6 行： 調整 top 位置</li>
+<li>第 7 行： 將資料指定到 top 位置</li>
+</ol>
+<p><strong>Implementing a Pop operation</strong></p>
+<p>從 stack 移除資料</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Pop() error {
+</span></span><span class="line"><span class="cl">    if s.IsEmpty() {
+</span></span><span class="line"><span class="cl">        return errors.New(&#34;stack underflow&#34;)
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    s.stack = s.stack[:s.top]
+</span></span><span class="line"><span class="cl">    s.top--
+</span></span><span class="line"><span class="cl">    return nil
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Pop 實現的方法如下所述：</p>
+<ol>
+<li>第 2 行： 檢查 stack 是否有資料</li>
+<li>第 6 行： 從 slice 移除 top 的資料</li>
+<li>第 7 行： 調整 top 位置</li>
+</ol>
+<h2 id="application-of-stack-in-data-structure">application of stack in data structure</h2>
+<p>這邊舉例幾個 stack 的應用</p>
+<ul>
+<li>Parentheses Checking</li>
+<li>Expression Evaluation and Conversion</li>
+<li>Backtracking</li>
+<li>String Reversal</li>
+<li>Towers of Hanoi</li>
+</ul>
+<h3 id="1-parentheses-checking">1. Parentheses Checking</h3>
+<p>檢查 <code>()</code> 、 <code>[]</code> 、 <code>{}</code> 括號在是否有效，同時檢查左右括號是否是平衡的。</p>
+<p>例如 <code>[(){}]</code> 是平衡的，而 <code>{[}]</code> 是不平衡的。</p>
+<h3 id="2-expression-evaluation-and-conversion">2. Expression Evaluation and Conversion</h3>
+<p>表達式的評估（計算）與轉換，表達式有以下三種型態：</p>
+<p><strong>Prefix Expression（前輟表達式）</strong><br>
+又稱波蘭表達式，其特點是沒有括號且運算符號在數字前面。</p>
+<ul>
+<li>X</li>
+<li>+XY</li>
+<li>*+XY-XY</li>
+</ul>
+<p><strong>Infix Expression（中輟表達式）</strong><br>
+一般人們可以識別、計算的運算式。</p>
+<ul>
+<li>X</li>
+<li>X+Y</li>
+<li>(X+Y)*(X-Y)</li>
+</ul>
+<p><strong>Postfix Expression（後輟表達式）</strong><br>
+又稱逆波蘭表達式，其特點是沒有括號且運算符號在數字後面。</p>
+<ul>
+<li>X</li>
+<li>XY+</li>
+<li>XY+XY-*</li>
+</ul>
+<h4 id="evaluation">Evaluation</h4>
+<p>表達式的計算是基於運算符（operator）的優先級（precedence）和結合性（associativity），當表達式有多個運算符時，會依據運算符的優先級和結合性做評估，優先級高的運算符先求值，優先級低的最後求值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">30 + 8 * 3 / 2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在上面的中輟表達式中，<code>*</code> 和 <code>/</code> 的優先級相同，而 <code>+</code> 的優先級最低，根據運算符號的優先級，會先計算 <code>*</code> 和 <code>/</code> ，再做 <code>+</code> ，由於 <code>*</code> 和 <code>/</code> 有相同優先級，根據 <a href="https://www.tutorialspoint.com/go/go_operators_precedence.htm" target="_blank" rel="noopener noreffer ">golang operator associativity</a> 計算順序會先執行 <code>*</code> ，再執行 <code>/</code> ，最後才執行 <code>+</code> ，因此上面的表達式的求值順序如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">8 * 3   ---&gt; 24
+</span></span><span class="line"><span class="cl">24 / 2  ---&gt; 12
+</span></span><span class="line"><span class="cl">30 + 12 ---&gt; 42
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="conversion">Conversion</h4>
+<p>由於需要額外處理優先級，因此計算機很難評估中輟表達式，中輟表達式是人類編寫和識別的方式，通常也是程式的輸入方式，因此通常會將中輟主換成前輟或後輟。</p>
+<h3 id="3-backtracking">3. Backtracking</h3>
+<p>Backtracking 是一種窮舉的搜尋法，會找尋所有可能的答案，可分為兩個概念；</p>
+<ul>
+<li>enumerate： 列出可能的答案在測試答案是否正確</li>
+<li>pruning： 在找尋答案的過程中，只要遇到不符合的條件就回朔到上一步，不在繼續往下尋找</li>
+</ul>
+<h4 id="8-queens-problem">8 queens problem</h4>
+<p>如何在 8 x 8 的西洋棋盤上放 8 個皇后的棋子，且這 8 個皇后不會互相攻擊（也就是每個皇后的橫向、縱向、斜對角都沒有出現其他皇后）的所有解法。</p>
+<h4 id="sudoku">Sudoku</h4>
+<p>數獨，是一種數學邏輯遊戲，你必須用 1 到 9 去填滿 9 x 9 的格子，且各數字的橫向、縱向皆不會出現重複的數字。</p>
+<h3 id="4-string-reversal">4. String Reversal</h3>
+<p>利用 stack 先進後出的特性，反轉字串。</p>
+<h3 id="5-towers-of-hanoi">5. Towers of Hanoi</h3>
+<p>河內塔是根據傳說形成的數學問題，有三根桿子分別是 A、B、C ，有 N 個圓盤疊在桿子 A 上，且這 N 個圓盤的尺寸由下到上依序變小，需在遵循以下條件的同時將所有圓盤移至桿子 C :</p>
+<ul>
+<li>同一時間只能移動一個圓盤</li>
+<li>小圓盤必須在大圓盤上</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p><a href="https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm" target="_blank" rel="noopener noreffer ">Data Structure and Algorithms - Stack</a><br>
+<a href="http://alrightchiu.github.io/SecondRound/stack-introjian-jie.html" target="_blank" rel="noopener noreffer ">Stack: Intro(簡介)</a><br>
+<a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/stacks-in-data-structures" target="_blank" rel="noopener noreffer ">Implementing Stacks in Data Structures</a><br>
+<a href="https://rksurwase.medium.com/slice-based-stack-implementation-in-golang-8140603a1dc2" target="_blank" rel="noopener noreffer ">Slice Based Stack Implementation in Golang</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-11-29</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/stack/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/stack/" data-title="Stack" data-hashtags="stack,data structure"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/stack/" data-hashtag="stack"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/stack/" data-title="Stack"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/stack/" data-title="Stack"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/stack/" data-title="Stack" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/stack/">stack</a>,&nbsp;<a href="/tags/data-structure/">data structure</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/instagram-basic/" class="prev" rel="prev" title="testing instagram basic api on localhost"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>testing instagram basic api on localhost</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">learning record</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2022</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
