@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>透過 pgAdmin 操作 Heroku PostgreSQL Database - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="透過 pgAdmin 操作 Heroku PostgreSQL Database" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-09T00:19:57+08:00" />
+<meta property="article:modified_time" content="2022-12-09T00:19:57+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/featured-image.png"/>
+<meta name="twitter:title" content="透過 pgAdmin 操作 Heroku PostgreSQL Database"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" /><link rel="prev" href="https://xxxVitoxxx.github.io/git-clone-ssh-key/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "透過 pgAdmin 操作 Heroku PostgreSQL Database",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/operate-heroku-pg-using-pgadmin\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "","wordcount":  61 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/operate-heroku-pg-using-pgadmin\/","datePublished": "2022-12-09T00:19:57+08:00","dateModified": "2022-12-09T00:19:57+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">透過 pgAdmin 操作 Heroku PostgreSQL Database</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-09">2022-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;61 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/operate-heroku-pg-using-pgadmin/featured-image.png"
+        data-srcset="/operate-heroku-pg-using-pgadmin/featured-image.png, /operate-heroku-pg-using-pgadmin/featured-image.png 1.5x, /operate-heroku-pg-using-pgadmin/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/operate-heroku-pg-using-pgadmin/featured-image.png"
+        title="/operate-heroku-pg-using-pgadmin/featured-image.png" width="800" height="471" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#軟體">軟體</a></li>
+    <li><a href="#建立-postgres">建立 postgres</a></li>
+    <li><a href="#建立與heroku-postgresql資料庫的連結設定">建立與Heroku PostgreSQL資料庫的連結設定</a></li>
+    <li><a href="#利用sql語法來查詢資料庫的資料">利用SQL語法來查詢資料庫的資料</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="軟體">軟體</h2>
+<ul>
+<li>pgAdmin</li>
+<li>Heroku PostgreSQL project</li>
+</ul>
+<h2 id="建立-postgres">建立 postgres</h2>
+<p>登入Heroku，進到有Postgre專案的Resource，點擊Heroku Postgres</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/undefined.png"
+        data-srcset="https://imgur.com/undefined.png, https://imgur.com/undefined.png 1.5x, https://imgur.com/undefined.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/undefined.png"
+        title="create postgres" /></p>
+<p>點選settings，我們需要 <em>&lsquo;Host&rsquo;</em>、<em>&lsquo;Database&rsquo;</em>、<em>&lsquo;User&rsquo;</em>、<em>&lsquo;Port&rsquo;</em>、<em>&lsquo;Password&rsquo;</em> 的資訊</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/zkv77Wh.png"
+        data-srcset="https://imgur.com/zkv77Wh.png, https://imgur.com/zkv77Wh.png 1.5x, https://imgur.com/zkv77Wh.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/zkv77Wh.png"
+        title="setting postgres" /></p>
+<h2 id="建立與heroku-postgresql資料庫的連結設定">建立與Heroku PostgreSQL資料庫的連結設定</h2>
+<p>開啟pgAdmin，在左上角的Servers點擊右鍵 →Create →Server…</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/3GVZO9g.png"
+        data-srcset="https://imgur.com/3GVZO9g.png, https://imgur.com/3GVZO9g.png 1.5x, https://imgur.com/3GVZO9g.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/3GVZO9g.png"
+        title="establish connection" /></p>
+<p>在General標簽頁中，Name 欄位輸入可識別的名稱</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/w420uUI.png"
+        data-srcset="https://imgur.com/w420uUI.png, https://imgur.com/w420uUI.png 1.5x, https://imgur.com/w420uUI.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/w420uUI.png"
+        title="general" /></p>
+<p>在<em>Connection</em>標簽頁中<br>
+<em>Host name/address</em> 對應 Heroku Postgres的Host<br>
+<em>Port</em> 對應 Heroku Postgres的Port<br>
+<em>Maintenance database</em> 對應 Heroku Postgres的Database<br>
+<em>Username</em> 對應 Heroku Postgres的User<br>
+<em>Password</em> 對應 Heroku Postgres的Password<br>
+<em>Save password</em> 勾選起來</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/FxuMWJs.png"
+        data-srcset="https://imgur.com/FxuMWJs.png, https://imgur.com/FxuMWJs.png 1.5x, https://imgur.com/FxuMWJs.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/FxuMWJs.png"
+        title="setting" /></p>
+<p>在<em>SSL</em>標簽頁中，<em>SSLmode</em> 選擇Allow<br>
+關於其他選項可參考<a href="https://www.postgresql.org/docs/9.1/libpq-ssl.html" target="_blank" rel="noopener noreffer ">文件</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/1dQ95S4.png"
+        data-srcset="https://imgur.com/1dQ95S4.png, https://imgur.com/1dQ95S4.png 1.5x, https://imgur.com/1dQ95S4.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/1dQ95S4.png"
+        title="allow" /></p>
+<p>在<em>Advanced</em>標簽頁中<br>
+<em>DB restriction</em>對應 Heroku Postgres的Database<br>
+點擊下方 <em>Save</em>存儲</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/XS7wi5M.png"
+        data-srcset="https://imgur.com/XS7wi5M.png, https://imgur.com/XS7wi5M.png 1.5x, https://imgur.com/XS7wi5M.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/XS7wi5M.png"
+        title="advanced" /></p>
+<p>存儲後打開的畫面可以看到在Heroku PostgreSQL的所有資料表都在Tables標籤下</p>
+<h2 id="利用sql語法來查詢資料庫的資料">利用SQL語法來查詢資料庫的資料</h2>
+<p>在左邊的框框點擊右鍵選擇<em>Query Tool</em></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/5AlEfre.png"
+        data-srcset="https://imgur.com/5AlEfre.png, https://imgur.com/5AlEfre.png 1.5x, https://imgur.com/5AlEfre.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/5AlEfre.png"
+        title="query tool" /></p>
+<p>輸入SQL語法點擊右上方的三角形圖案執行命令</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/2j5dc8u.png"
+        data-srcset="https://imgur.com/2j5dc8u.png, https://imgur.com/2j5dc8u.png 1.5x, https://imgur.com/2j5dc8u.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/2j5dc8u.png"
+        title="execute" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-12-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/operate-heroku-pg-using-pgadmin/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" data-title="透過 pgAdmin 操作 Heroku PostgreSQL Database" data-hashtags=""><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" data-hashtag=""><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" data-title="透過 pgAdmin 操作 Heroku PostgreSQL Database"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" data-title="透過 pgAdmin 操作 Heroku PostgreSQL Database"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" data-title="透過 pgAdmin 操作 Heroku PostgreSQL Database" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/">Tags</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/git-clone-ssh-key/" class="prev" rel="prev" title="Git Clone With SSH Key"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Git Clone With SSH Key</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">learning record</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2022</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
