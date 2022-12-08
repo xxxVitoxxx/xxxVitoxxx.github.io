@@ -3,9 +3,19 @@
         <title>vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/</link>
         <description>vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 05 Oct 2021 00:19:57 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Dec 2022 01:06:26 &#43;0800</lastBuildDate>
             <atom:link href="https://xxxVitoxxx.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>testing instagram basic api on localhost</title>
+    <link>https://xxxVitoxxx.github.io/instagram-basic/</link>
+    <pubDate>Fri, 09 Dec 2022 01:06:26 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/instagram-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item>
+<item>
     <title>透過 pgAdmin 操作 Heroku PostgreSQL Database</title>
     <link>https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/</link>
     <pubDate>Tue, 05 Oct 2021 00:19:57 &#43;0800</pubDate>

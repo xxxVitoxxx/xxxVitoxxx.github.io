@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>testing instagram basic api on localhost - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="testing instagram basic api on localhost" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/instagram-basic/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/instagram-basic/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-09T01:06:26+08:00" />
+<meta property="article:modified_time" content="2022-12-09T01:06:26+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/instagram-basic/featured-image.png"/>
+<meta name="twitter:title" content="testing instagram basic api on localhost"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/instagram-basic/" /><link rel="prev" href="https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "testing instagram basic api on localhost",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/instagram-basic\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "instagram","wordcount":  311 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/instagram-basic\/","datePublished": "2022-12-09T01:06:26+08:00","dateModified": "2022-12-09T01:06:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/xxxVitoxxx" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">testing instagram basic api on localhost</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/instagram/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>instagram</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-09">2022-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;311 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/instagram-basic/featured-image.png"
+        data-srcset="/instagram-basic/featured-image.png, /instagram-basic/featured-image.png 1.5x, /instagram-basic/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/instagram-basic/featured-image.png"
+        title="/instagram-basic/featured-image.png" width="5184" height="3456" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#建立-instagram-的應用程式">建立 instagram 的應用程式</a>
+      <ul>
+        <li><a href="#在-meta-開發人員工具創建應用程式">在 Meta 開發人員工具創建應用程式</a></li>
+        <li><a href="#新增-instagram-測試人員">新增 instagram 測試人員</a></li>
+      </ul>
+    </li>
+    <li><a href="#建立一個-web-服務">建立一個 web 服務</a></li>
+    <li><a href="#設定-ngrok">設定 ngrok</a>
+      <ul>
+        <li><a href="#安裝-ngrok">安裝 ngrok</a></li>
+        <li><a href="#設定應用程式">設定應用程式</a></li>
+      </ul>
+    </li>
+    <li><a href="#取得-instagram-basic-api-的-token">取得 instagram basic api 的 token</a>
+      <ul>
+        <li><a href="#驗證測試人員">驗證測試人員</a></li>
+        <li><a href="#將授權碼換成-token">將授權碼換成 token</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>因 Meta Develop 開發政策，強制所有的用戶端 OAuth 都要使用 https 的 URL 才能被 Meta 認定為有效的 OAuth 重新導向 URL ，這會導致我們在地端測試時，會需要 https 的 URL 供我們做測試，這邊我們使用 ngrok 來產生一組 https 的 URL ，並帶著各位如何在地端使用 ngrok 來測試 instagram basic api</p>
+<h2 id="建立-instagram-的應用程式">建立 instagram 的應用程式</h2>
+<h3 id="在-meta-開發人員工具創建應用程式">在 Meta 開發人員工具創建應用程式</h3>
+<p>到 <a href="https://developers.facebook.com/?no_redirect=1" target="_blank" rel="noopener noreffer ">Meta for Developers</a> 建立應用程式</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/SqaqiXa.png"
+        data-srcset="https://imgur.com/SqaqiXa.png, https://imgur.com/SqaqiXa.png 1.5x, https://imgur.com/SqaqiXa.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/SqaqiXa.png"
+        title="create application" /></p>
+<p>再來需要選擇應用程式的類型及填寫名稱，這邊需要注意類型的選擇會導致該應用程式可使用的產品、權限及功能，<a href="https://developers.facebook.com/docs/development/create-an-app/app-dashboard/app-types" target="_blank" rel="noopener noreffer ">詳情可以參考官方文件</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/1xwkv4U.png"
+        data-srcset="https://imgur.com/1xwkv4U.png, https://imgur.com/1xwkv4U.png 1.5x, https://imgur.com/1xwkv4U.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/1xwkv4U.png"
+        title="app type" /></p>
+<p>點選 instagram 基本顯示的設定</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/dIVtYPY.png"
+        data-srcset="https://imgur.com/dIVtYPY.png, https://imgur.com/dIVtYPY.png 1.5x, https://imgur.com/dIVtYPY.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/dIVtYPY.png"
+        title="set up" /></p>
+<p>在 instagram 基本顯示 &gt; 基本顯示 中建立新的應用程式</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/FPtEXIA.png"
+        data-srcset="https://imgur.com/FPtEXIA.png, https://imgur.com/FPtEXIA.png 1.5x, https://imgur.com/FPtEXIA.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/FPtEXIA.png"
+        title="create instagram basic app" /></p>
+<h3 id="新增-instagram-測試人員">新增 instagram 測試人員</h3>
+<p>完成上面的步驟後，點選左邊選項中的 角色 &gt; instagram 測試人員的按鈕，輸入你要用來測試的 instagram 帳號</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/7qNpQSo.png"
+        data-srcset="https://imgur.com/7qNpQSo.png, https://imgur.com/7qNpQSo.png 1.5x, https://imgur.com/7qNpQSo.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/7qNpQSo.png"
+        title="add test" /></p>
+<p>這時登入網頁版的 instagram ，在 設定 &gt; 應用程式和網站 &gt; 測試員邀請 ，會發現應用程式的邀請確認，點選接受就成功成為應用程式的測試人員</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/BDULvxO.png"
+        data-srcset="https://imgur.com/BDULvxO.png, https://imgur.com/BDULvxO.png 1.5x, https://imgur.com/BDULvxO.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/BDULvxO.png"
+        title="allow test" /></p>
+<h2 id="建立一個-web-服務">建立一個 web 服務</h2>
+<p>這邊以 golang 搭建一個簡單的網頁並把服務放在 <code>80 port</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/ping&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&#34;pong&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:80&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把服務起起來並確認頁面有正常顯示，以上面範例，在瀏覽器
+載入 <code>localhost:80/ping</code> 會出現以下圖例</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/KXqoinl.png"
+        data-srcset="https://imgur.com/KXqoinl.png, https://imgur.com/KXqoinl.png 1.5x, https://imgur.com/KXqoinl.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/KXqoinl.png"
+        title="localhost:80/ping" /></p>
+<h2 id="設定-ngrok">設定 ngrok</h2>
+<h3 id="安裝-ngrok">安裝 ngrok</h3>
+<p>先到 <a href="https://ngrok.com/download" target="_blank" rel="noopener noreffer ">ngrok 官網</a> 下載對應的版本並註冊登入會員，初次安裝需先驗證 ngrok 的 agent，到 Your Authtoken 執行 Command Line 的指令，會將 ngrok 的 Authtoken 保存在你的電腦，授於 agent 使用 ngrok 所有功能的權限</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/NE6GzRh.png"
+        data-srcset="https://imgur.com/NE6GzRh.png, https://imgur.com/NE6GzRh.png 1.5x, https://imgur.com/NE6GzRh.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/NE6GzRh.png"
+        title="ngrok" /></p>
+<p>完成後執行 <code>$ ngrok http {port}</code> ，就可以將 <code>localhost:{port}</code> 的服務對外開放，因為我服務使用 <code>80 port</code> 的關係，所以我要執行 <code>$ ngrok http 80</code> ，接著會看到以下圖片的樣子，就代表成功將地端的 <code>80 port</code> 對外開放，而紅色框框的 https 網址為你地端服務對外的網址，這時其他人就可以透過該網址連到你的網頁</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/2PikB8H.png"
+        data-srcset="https://imgur.com/2PikB8H.png, https://imgur.com/2PikB8H.png 1.5x, https://imgur.com/2PikB8H.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/2PikB8H.png"
+        title="command line" /></p>
+<h3 id="設定應用程式">設定應用程式</h3>
+<p>回到 Meta for Developers 左邊選項的 instagram 基本顯示 &gt; 基本顯示 去設定 <code>用戶端 OAuth 設定</code>、<code>取消授權</code>、<code>資料刪除要求</code>，在圖中的三個欄位填入 ngrok 產生的 https 網址</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/gtl7jDv.png"
+        data-srcset="https://imgur.com/gtl7jDv.png, https://imgur.com/gtl7jDv.png 1.5x, https://imgur.com/gtl7jDv.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/gtl7jDv.png"
+        title="ngrok http 80" /></p>
+<h2 id="取得-instagram-basic-api-的-token">取得 instagram basic api 的 token</h2>
+<h3 id="驗證測試人員">驗證測試人員</h3>
+<p>建構授權的視窗網址，<code>{app-id}</code> 為 instagram 基本顯示 &gt; 基本顯示 &gt; instagram 應用程式編號， <code>{redirect-uri}</code> 為<code>有效的 OAuth 重新導向 URI</code>的網址（<em>網址必須完全相同</em>）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.instagram.com/oauth/authorize
+</span></span><span class="line"><span class="cl">  ?client_id={app-id}
+</span></span><span class="line"><span class="cl">  &amp;redirect_uri={redirect-uri}
+</span></span><span class="line"><span class="cl">  &amp;scope=user_profile,user_media
+</span></span><span class="line"><span class="cl">  &amp;response_type=code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以我們剛剛產生的 https 網址為例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.instagram.com/oauth/authorize
+</span></span><span class="line"><span class="cl">  ?client_id=135421602932815
+</span></span><span class="line"><span class="cl">  &amp;redirect_uri=https://6e02-220-135-89-54.jp.ngrok.io/ping
+</span></span><span class="line"><span class="cl">  &amp;scope=user_profile,user_media
+</span></span><span class="line"><span class="cl">  &amp;response_type=code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在瀏覽器載入網址後，會出現應用程式要求權限的說明</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/LPaPfJd.png"
+        data-srcset="https://imgur.com/LPaPfJd.png, https://imgur.com/LPaPfJd.png 1.5x, https://imgur.com/LPaPfJd.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/LPaPfJd.png"
+        title="要求權限" /></p>
+<p>點選允許後，會跳轉到你在應用程式設定的<code>重新導向 URI</code>的頁面，這時請觀察該網頁的網址</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/W2obeKW.png"
+        data-srcset="https://imgur.com/W2obeKW.png, https://imgur.com/W2obeKW.png 1.5x, https://imgur.com/W2obeKW.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/W2obeKW.png"
+        title="redirect url" /></p>
+<p>網址中的 <code>code</code> 到 <code>#_</code> 之間為測試人員的授權碼</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://6e02-220-135-89-54.jp.ngrok.io/ping?code=AQAODGH_DePavKuPRK0UKy5nMnSBYG_EEjOcodAUC5Q-wVS0uP5SDjFNgNWdw2a4plybIndmH0CuPKvx5k-IDNlVh4sX2qjao1LKGRykYNvpn_6gTtYWYPDrcJR0Lt5JrWHdo5Nj70cBg6VMDeW-vyzEAXzgnfgUTg3FeOfdJ2vlBenmCsMqwCrOS2SSQzMLEGK1B7osZz7W8ckAGkiyYZUGTOTlIDDuy4UOpLJ_PJd_4g#_
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="將授權碼換成-token">將授權碼換成 token</h3>
+<p>將 <code>{app-id}</code> 、 <code>{app-secret}</code> 、 <code>{redirect-uri}</code> 、 <code>{code}</code> 換成你的 instagram 應用程式編號、 instagram 應用程式密鑰 、重新導向 URI 、授權碼，並輸入指令傳送請求</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -X POST https://api.instagram.com/oauth/access_token \
+</span></span><span class="line"><span class="cl">-F client_id={app-id} \
+</span></span><span class="line"><span class="cl">-F client_secret={app-secret} \
+</span></span><span class="line"><span class="cl">-F grant_type=authorization_code \
+</span></span><span class="line"><span class="cl">-F redirect_uri={redirect-uri} \
+</span></span><span class="line"><span class="cl">-F code={code}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>成功時，會回傳以下 json 格式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span> <span class="nt">&#34;access_token&#34;</span><span class="p">:</span> <span class="s2">&#34;IGQVJV...&#34;</span><span class="p">,</span> <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">178414005245354752</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/5m0ZSpv.png"
+        data-srcset="https://imgur.com/5m0ZSpv.png, https://imgur.com/5m0ZSpv.png 1.5x, https://imgur.com/5m0ZSpv.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/5m0ZSpv.png"
+        title="terminal" /></p>
+<p>這時候就可以用 <code>access_token</code> 和 <code>user_id</code> 去串接 instagram basic api 了</p>
+<h2 id="reference">Reference</h2>
+<p><a href="https://developers.facebook.com/docs/instagram-basic-display-api/getting-started" target="_blank" rel="noopener noreffer ">Meta for Developers</a><br>
+<a href="https://medium.com/alexchanglife/%E7%94%A2%E5%93%81%E9%96%8B%E7%99%BC-%E5%A6%82%E4%BD%95%E5%9C%A8localhost%E6%B8%AC%E8%A9%A6fb-login-sdk%E5%8A%9F%E8%83%BD-mac-5098973b9901" target="_blank" rel="noopener noreffer ">產品開發 | 如何在Localhost實作與測試FB Login SDK功能</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-12-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/instagram-basic/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/instagram-basic/" data-title="testing instagram basic api on localhost" data-hashtags="instagram"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/instagram-basic/" data-hashtag="instagram"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/instagram-basic/" data-title="testing instagram basic api on localhost"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/instagram-basic/" data-title="testing instagram basic api on localhost"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/instagram-basic/" data-title="testing instagram basic api on localhost" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/instagram/">instagram</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/operate-heroku-pg-using-pgadmin/" class="prev" rel="prev" title="透過 pgAdmin 操作 Heroku PostgreSQL Database"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>透過 pgAdmin 操作 Heroku PostgreSQL Database</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">learning record</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2022</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
