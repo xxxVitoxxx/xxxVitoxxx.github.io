@@ -3,15 +3,25 @@
         <title>All Posts - vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/posts/</link>
         <description>All Posts | vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Dec 2022 01:06:26 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 09 Aug 2022 01:06:26 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>testing instagram basic api on localhost</title>
     <link>https://xxxVitoxxx.github.io/instagram-basic/</link>
-    <pubDate>Fri, 09 Dec 2022 01:06:26 &#43;0800</pubDate>
+    <pubDate>Tue, 09 Aug 2022 01:06:26 &#43;0800</pubDate>
     <author>vito</author>
     <guid>https://xxxVitoxxx.github.io/instagram-basic/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.png" referrerpolicy="no-referrer">
             </div>]]></description>
+</item>
+<item>
+    <title>用 golang 處理 json 資料</title>
+    <link>https://xxxVitoxxx.github.io/golang-json/</link>
+    <pubDate>Thu, 09 Jun 2022 01:18:39 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/golang-json/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>Go 的標準函式庫可以很容易的對 JSON 資料進行編、解碼的工作。</p>]]></description>
 </item>
 <item>
     <title>透過 pgAdmin 操作 Heroku PostgreSQL Database</title>

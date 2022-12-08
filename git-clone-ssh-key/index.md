@@ -122,4 +122,3 @@ clone下來的資料夾名稱會是你的GitHub的repository名稱
 將剛剛新增的檔案推到GitHub上  
 
 ![git push](https://imgur.com/s42oNdu.png)  
-
