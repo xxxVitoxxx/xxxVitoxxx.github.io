@@ -11,7 +11,7 @@
 
 登入Heroku，進到有Postgre專案的Resource，點擊Heroku Postgres  
 
-![create postgres](https://imgur.com/undefined.png)  
+![create postgres](https://imgur.com/aYB1jra.png)  
 
 點選settings，我們需要 *'Host'*、*'Database'*、*'User'*、*'Port'*、*'Password'* 的資訊  
 
@@ -59,3 +59,4 @@
 輸入SQL語法點擊右上方的三角形圖案執行命令  
 
 ![execute](https://imgur.com/2j5dc8u.png)  
+
