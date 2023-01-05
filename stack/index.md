@@ -41,7 +41,7 @@ stack 是一種線性的資料結構，其新增資料或刪除資料都在同�
 
 **Declaring stack**  
 
-```golang=1
+```go
 type StackSlice struct {
     top      int
     capacity int
@@ -67,7 +67,8 @@ stack 結構有以下三種屬性：
 
 檢查 stack 是否有資料。  
 
-```golang=1
+```Theme Documentation - Basics
+=1
 func (s *StackSlice) IsEmpty() bool {
     return s.top == -1
 }
@@ -77,7 +78,7 @@ func (s *StackSlice) IsEmpty() bool {
 
 檢查 stack 是否還有空間可以存放資料。  
 
-```golang=1
+```go
 func (s *StackSlice) IsFull() bool {
     return s.top+1 == s.capacity
 }
@@ -87,7 +88,7 @@ func (s *StackSlice) IsFull() bool {
 
 回傳 stack 大小。  
 
-```golang=1
+```go
 func (s *StackSlice) Size() int {
     return s.top + 1
 }
@@ -97,7 +98,7 @@ func (s *StackSlice) Size() int {
 
 回傳 stack 最後一筆資料。  
 
-```golang=1
+```go
 func (s *StackSlice) Peek() (int, error) {
     if s.IsEmpty() {
         return 0, errors.New("stack underflow")
@@ -110,7 +111,7 @@ func (s *StackSlice) Peek() (int, error) {
 
 印出 stack 中所有資料。  
 
-```golang=1
+```go
 func (s *StackSlice) Print() {
     for i := 0; i <= s.top; i++ {
         fmt.Printf("%d  ", s.stack[i])
@@ -123,7 +124,7 @@ func (s *StackSlice) Print() {
 
 新增資料到 stack
 
-```golang=1
+```go
 func (s *StackSlice) Push(data int) error {
     if s.IsFull() {
         return errors.New("stack overflow")
@@ -145,7 +146,7 @@ Push 實現的方法如下所述：
 
 從 stack 移除資料  
 
-```golang=1
+```go
 func (s *StackSlice) Pop() error {
     if s.IsEmpty() {
         return errors.New("stack underflow")

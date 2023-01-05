@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/xxxVitoxxx.github.io\/stack\/"
-        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "stack, data structure","wordcount":  565 ,
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "stack, data structure","wordcount":  567 ,
         "url": "https:\/\/xxxVitoxxx.github.io\/stack\/","datePublished": "2022-11-29T01:29:12+08:00","dateModified": "2022-11-29T01:29:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "vito","logo": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Stack</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-structure/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>data structure</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-29">2022-11-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;565 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-29">2022-11-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;567 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -215,19 +215,19 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">type StackSlice struct {
-</span></span><span class="line"><span class="cl">    top      int
-</span></span><span class="line"><span class="cl">    capacity int
-</span></span><span class="line"><span class="cl">    stack    []int
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">StackSlice</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">top</span>      <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">capacity</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stack</span>    <span class="p">[]</span><span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">func NewStackSlice(capacity int) *StackSlice {
-</span></span><span class="line"><span class="cl">    return &amp;StackSlice{
-</span></span><span class="line"><span class="cl">        top:      -1,
-</span></span><span class="line"><span class="cl">        capacity: capacity,
-</span></span><span class="line"><span class="cl">        stack:    make([]int, 0, capacity),
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">NewStackSlice</span><span class="p">(</span><span class="nx">capacity</span> <span class="kt">int</span><span class="p">)</span> <span class="o">*</span><span class="nx">StackSlice</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">StackSlice</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">top</span><span class="p">:</span>      <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">capacity</span><span class="p">:</span> <span class="nx">capacity</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">stack</span><span class="p">:</span>    <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">capacity</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>stack 結構有以下三種屬性：</p>
@@ -243,9 +243,11 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) IsEmpty() bool {
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">=1
+</span></span><span class="line"><span class="cl">func (s *StackSlice) IsEmpty() bool {
 </span></span><span class="line"><span class="cl">    return s.top == -1
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
@@ -259,9 +261,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) IsFull() bool {
-</span></span><span class="line"><span class="cl">    return s.top+1 == s.capacity
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">IsFull</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="nx">s</span><span class="p">.</span><span class="nx">capacity</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Implementing a Size operation</strong></p>
@@ -273,9 +275,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Size() int {
-</span></span><span class="line"><span class="cl">    return s.top + 1
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">Size</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Implementing a Peek operation</strong></p>
@@ -290,12 +292,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Peek() (int, error) {
-</span></span><span class="line"><span class="cl">    if s.IsEmpty() {
-</span></span><span class="line"><span class="cl">        return 0, errors.New(&#34;stack underflow&#34;)
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    return s.stack[s.top], nil
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">Peek</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">s</span><span class="p">.</span><span class="nf">IsEmpty</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;stack underflow&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">stack</span><span class="p">[</span><span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="p">],</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Implementing a Print operation</strong></p>
@@ -310,12 +312,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Print() {
-</span></span><span class="line"><span class="cl">    for i := 0; i &lt;= s.top; i++ {
-</span></span><span class="line"><span class="cl">        fmt.Printf(&#34;%d  &#34;, s.stack[i])
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    fmt.Println()
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">Print</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%d  &#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">stack</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Implementing a Push operation</strong></p>
@@ -333,15 +335,15 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Push(data int) error {
-</span></span><span class="line"><span class="cl">    if s.IsFull() {
-</span></span><span class="line"><span class="cl">        return errors.New(&#34;stack overflow&#34;)
-</span></span><span class="line"><span class="cl">    }
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">Push</span><span class="p">(</span><span class="nx">data</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">s</span><span class="p">.</span><span class="nf">IsFull</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;stack overflow&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    s.top++
-</span></span><span class="line"><span class="cl">    s.stack[s.top] = data
-</span></span><span class="line"><span class="cl">    return nil
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">stack</span><span class="p">[</span><span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="p">]</span> <span class="p">=</span> <span class="nx">data</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Push 實現的方法如下所述：</p>
@@ -365,15 +367,15 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func (s *StackSlice) Pop() error {
-</span></span><span class="line"><span class="cl">    if s.IsEmpty() {
-</span></span><span class="line"><span class="cl">        return errors.New(&#34;stack underflow&#34;)
-</span></span><span class="line"><span class="cl">    }
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">StackSlice</span><span class="p">)</span> <span class="nf">Pop</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">s</span><span class="p">.</span><span class="nf">IsEmpty</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;stack underflow&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    s.stack = s.stack[:s.top]
-</span></span><span class="line"><span class="cl">    s.top--
-</span></span><span class="line"><span class="cl">    return nil
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">stack</span> <span class="p">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">stack</span><span class="p">[:</span><span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">top</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Pop 實現的方法如下所述：</p>
@@ -492,7 +494,7 @@
 <div id="comments"></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">continue learning</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2022</span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span></div>
         </div>
     </footer></div>
 
