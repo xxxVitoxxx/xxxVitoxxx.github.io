@@ -5,10 +5,10 @@
         <description>heroku - Category - vito&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 05 Oct 2021 00:19:57 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/categories/heroku/" rel="self" type="application/rss+xml" /><item>
     <title>透過 pgAdmin 操作 Heroku PostgreSQL Database</title>
-    <link>https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/</link>
+    <link>https://xxxVitoxxx.github.io/2021/10/operate-heroku-pg-using-pgadmin/</link>
     <pubDate>Tue, 05 Oct 2021 00:19:57 &#43;0800</pubDate>
     <author>vito</author>
-    <guid>https://xxxVitoxxx.github.io/operate-heroku-pg-using-pgadmin/</guid>
+    <guid>https://xxxVitoxxx.github.io/2021/10/operate-heroku-pg-using-pgadmin/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.png" referrerpolicy="no-referrer">
             </div>]]></description>

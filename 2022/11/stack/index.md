@@ -257,3 +257,4 @@ Backtracking 是一種窮舉的搜尋法，會找尋所有可能的答案，可�
 [Stack: Intro(簡介)](http://alrightchiu.github.io/SecondRound/stack-introjian-jie.html)  
 [Implementing Stacks in Data Structures](https://www.simplilearn.com/tutorials/data-structure-tutorial/stacks-in-data-structures)  
 [Slice Based Stack Implementation in Golang](https://rksurwase.medium.com/slice-based-stack-implementation-in-golang-8140603a1dc2)  
+
