@@ -2,26 +2,28 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://xxxVitoxxx.github.io/2022/11/stack/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/2022/08/instagram-basic/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/2022/06/golang-json/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/2021/10/operate-heroku-pg-using-pgadmin/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/2021/05/git-clone-ssh-key/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/data-structure/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/data-structure/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/posts/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/stack/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/instagram/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/instagram/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/golang/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/golang/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/json/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/heroku/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/heroku/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/postgres/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/categories/git/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://xxxVitoxxx.github.io/tags/ssh-key/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2023/01/queue/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2022/11/stack/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2022/08/instagram-basic/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2022/06/golang-json/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2021/10/operate-heroku-pg-using-pgadmin/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/2021/05/git-clone-ssh-key/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/data-structure/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/data-structure/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/posts/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/queue/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/</loc><lastmod>2023-01-12T01:27:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/stack/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/instagram/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/instagram/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/golang/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/golang/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/json/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/heroku/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/heroku/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/postgres/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/categories/git/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://xxxVitoxxx.github.io/tags/ssh-key/</loc><lastmod>2023-01-08T18:04:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://xxxVitoxxx.github.io/about/</loc><lastmod>2023-01-05T21:01:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>

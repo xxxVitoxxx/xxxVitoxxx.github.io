@@ -39,7 +39,7 @@ stack 是一種線性的資料結構，其新增資料或刪除資料都在同�
 
 ### slice based stack
 
-**Declaring stack**  
+#### Declaring stack
 
 ```go
 type StackSlice struct {
@@ -63,7 +63,7 @@ stack 結構有以下三種屬性：
 2. **capacity**: stack 的大小  
 3. **stack**: int 屬性的 slice  
 
-**Implementing a IsEmpty operation**  
+#### Implementing a IsEmpty operation
 
 檢查 stack 是否有資料。  
 
@@ -74,7 +74,7 @@ func (s *StackSlice) IsEmpty() bool {
 }
 ```  
 
-**Implementing a IsFull operation**  
+#### Implementing a IsFull operation
 
 檢查 stack 是否還有空間可以存放資料。  
 
@@ -84,7 +84,7 @@ func (s *StackSlice) IsFull() bool {
 }
 ```  
 
-**Implementing a Size operation**  
+#### Implementing a Size operation
 
 回傳 stack 大小。  
 
@@ -94,7 +94,7 @@ func (s *StackSlice) Size() int {
 }
 ```  
 
-**Implementing a Peek operation**  
+#### Implementing a Peek operation
 
 回傳 stack 最後一筆資料。  
 
@@ -107,7 +107,7 @@ func (s *StackSlice) Peek() (int, error) {
 }
 ```  
 
-**Implementing a Print operation**  
+#### Implementing a Print operation
 
 印出 stack 中所有資料。  
 
@@ -120,7 +120,7 @@ func (s *StackSlice) Print() {
 }
 ```  
 
-**Implementing a Push operation**  
+#### Implementing a Push operation
 
 新增資料到 stack
 
@@ -142,7 +142,7 @@ Push 實現的方法如下所述：
 2. 第 6 行： 調整 top 位置  
 3. 第 7 行： 將資料指定到 top 位置  
 
-**Implementing a Pop operation**  
+#### Implementing a Pop operation
 
 從 stack 移除資料  
 

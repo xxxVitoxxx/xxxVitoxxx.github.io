@@ -3,7 +3,17 @@
         <title>data structure - Category - vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/categories/data-structure/</link>
         <description>data structure - Category - vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 29 Nov 2022 01:29:12 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/categories/data-structure/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 Jan 2023 01:27:38 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/categories/data-structure/" rel="self" type="application/rss+xml" /><item>
+    <title>Queue</title>
+    <link>https://xxxVitoxxx.github.io/2023/01/queue/</link>
+    <pubDate>Thu, 12 Jan 2023 01:27:38 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/2023/01/queue/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>queue 是一種兩端開放的線性數據結構，在前端取出元素，在尾端新增元素，類似排隊購票，排在第一位的，可以最先購票。</p>]]></description>
+</item>
+<item>
     <title>Stack</title>
     <link>https://xxxVitoxxx.github.io/2022/11/stack/</link>
     <pubDate>Tue, 29 Nov 2022 01:29:12 &#43;0800</pubDate>
