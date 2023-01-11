@@ -25,7 +25,7 @@ queue 可以使用 array 和 linked List 實作，這邊使用 golang 的 slice 
 
 ### Declaring stack
 
-```go=1
+```go
 type Queue struct {
     queue []int
     capacity int
@@ -43,7 +43,7 @@ Queue 結構有兩個屬性：
 
 ### Implementing a IsEmpty operation
 
-```go=1
+```go
 func (q *Queue) IsEmpty() bool {
     return len(q.queue) == 0
 }
@@ -51,7 +51,7 @@ func (q *Queue) IsEmpty() bool {
 
 ### Implementing a IsFull operation
 
-```go=1
+```go
 func (q *Queue) IsFull() bool {
     return len(q.queue) == q.capacity
 }
@@ -72,7 +72,7 @@ func (q *Queue) Enqueue(element int) error {
 
 ### Implementing a Dequeue operation
 
-```go=
+```go
 func (q *Queue) Dequeue() error {
     if q.IsEmpty() {
         return errors.New("queue underflow")
