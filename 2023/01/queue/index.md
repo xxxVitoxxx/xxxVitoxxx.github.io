@@ -2,6 +2,7 @@
 
 queue 是一種兩端開放的線性數據結構，在前端取出元素，在尾端新增元素，類似排隊購票，排在第一位的，可以最先購票。  
 <!--more-->
+
 遵循先進先出（FILO, First-in-First-out）的特性，通常被使用在管理多線程和實現優先級排隊系統。  
 
 ![queue](https://imgur.com/AjBisqH.png)  

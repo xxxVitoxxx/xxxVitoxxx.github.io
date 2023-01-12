@@ -11,7 +11,9 @@
     <pubDate>Thu, 12 Jan 2023 01:27:38 &#43;0800</pubDate>
     <author>vito</author>
     <guid>https://xxxVitoxxx.github.io/2023/01/queue/</guid>
-    <description><![CDATA[<p>queue 是一種兩端開放的線性數據結構，在前端取出元素，在尾端新增元素，類似排隊購票，排在第一位的，可以最先購票。</p>]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>queue 是一種兩端開放的線性數據結構，在前端取出元素，在尾端新增元素，類似排隊購票，排在第一位的，可以最先購票。</p>]]></description>
 </item>
 <item>
     <title>Stack</title>
