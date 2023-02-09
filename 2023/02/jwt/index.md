@@ -104,8 +104,6 @@ eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6InZpdG8iLCJleHAiOjE1MzIzMjMyLCJpYXQiOjE0NTY3
 
 在身份驗證中，會如下圖所示，當用戶成功登入後，會回傳一個 JSON Web Token ，之後在有限時間內，可以使用 token 做特定的操作或請求，不需重複執行登入的動作，由於 token 是憑證，因此必須注意防止出現安全問題，通常不應保留過期的 token  
 
-
-
 ```markdown
 {{< mermaid >}}
 sequenceDiagram;
@@ -219,13 +217,4 @@ func middlewareVerifyJWT() gin.HandlerFunc {
 - [jwt.io](https://jwt.io/introduction)  
 - [搭配上面一起](https://dev.to/moe23/intro-to-jwt-mcb)
 - [JWT(JSON Web Token) — 原理介紹](https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%87%82%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/jwt-json-web-token-%E5%8E%9F%E7%90%86%E4%BB%8B%E7%B4%B9-74abfafad7ba)  
-- [淺談JWT的安全性與適用情境](https://medium.com/mr-efacani-teatime/%E6%B7%BA%E8%AB%87jwt%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%88%87%E9%81%A9%E7%94%A8%E6%83%85%E5%A2%83-301b5491b60e)  
-- [用 Go 實現 JWT Based 驗證](https://waynestalk.com/go-jwt-tutorial/)  
-- [Secure Your Go REST API with JWT Authentication](https://www.youtube.com/watch?v=-Eei8eik1Io)  
-- [JSON Web tokens vs sessions for authentication | should you use JWTs as session tokens?](https://www.youtube.com/watch?v=U6OcC0yq1CE)  
-- [Securing Your Go REST APIs With JWTs](https://tutorialedge.net/golang/authenticating-golang-rest-api-with-jwts/)  
-- [What on Earth Is OAuth? ASuper Simple Intro to OAuth 2.0, Access Tokens, and How to Implement It in Your Site](https://dev.to/cotter/what-on-earth-is-oauth-a-super-simple-intro-to-oauth-2-0-access-tokens-and-how-to-implement-it-in-your-site-48jo#what-is-oauth-20)  
-- [[Day22] 解析 jwt (二)](https://ithelp.ithome.com.tw/articles/10225823)  
-- [3.6 编写一个简单的文件日志](https://eddycjy.gitbook.io/golang/di-3-ke-gin/log)  - [Day 19 - 二周目 - 帳密認証與JWT (JSON Web Token)傳遞](https://ithelp.ithome.com.tw/articles/10203292)  
-- [JSON Web Token Claims](https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-token-claims#public-claims)  
-- [Golang 之 JWT 實現](https://www.readfog.com/a/1643064569512431616)
+- [淺談JWT的安全性與適用情境](https://medium.com/mr-efacani-teatime/%E6%B7%BA%E8%AB%87jwt%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%88%87%E9%81%A9%E7%94%A8%E6%83%85%E5%A2%83-301b5491b60e)
