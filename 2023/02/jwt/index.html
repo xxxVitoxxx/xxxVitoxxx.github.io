@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>JWT - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="JWT" />
+<meta property="og:description" content="JWT 是 JSON Web Token 的簡寫，它是一種開放標準 RFC 7519，此標準定義了一種緊湊且獨立的方式，用 JSON 物件在雙方之間安全地傳輸信息。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/2023/02/jwt/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/2023/02/jwt/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-09T20:46:28+08:00" />
+<meta property="article:modified_time" content="2023-02-09T20:46:28+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/2023/02/jwt/featured-image.png"/>
+<meta name="twitter:title" content="JWT"/>
+<meta name="twitter:description" content="JWT 是 JSON Web Token 的簡寫，它是一種開放標準 RFC 7519，此標準定義了一種緊湊且獨立的方式，用 JSON 物件在雙方之間安全地傳輸信息。"/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/2023/02/jwt/" /><link rel="prev" href="https://xxxVitoxxx.github.io/2023/01/queue/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JWT",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/2023\/02\/jwt\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "jwt","wordcount":  663 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/2023\/02\/jwt\/","datePublished": "2023-02-09T20:46:28+08:00","dateModified": "2023-02-09T20:46:28+08:00","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">JWT</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/jwt/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>jwt</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;663 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2023/02/jwt/featured-image.png"
+        data-srcset="/2023/02/jwt/featured-image.png, /2023/02/jwt/featured-image.png 1.5x, /2023/02/jwt/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/2023/02/jwt/featured-image.png"
+        title="/2023/02/jwt/featured-image.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什麼是-jwt">什麼是 JWT</a></li>
+    <li><a href="#什麼時候會使用-jwt">什麼時候會使用 JWT</a></li>
+    <li><a href="#jwt-結構">JWT 結構</a>
+      <ul>
+        <li><a href="#header">Header</a></li>
+        <li><a href="#payload">Payload</a></li>
+        <li><a href="#signature">Signature</a></li>
+        <li><a href="#組合成-jwt-結構">組合成 JWT 結構</a></li>
+      </ul>
+    </li>
+    <li><a href="#jwt-如何運作">JWT 如何運作</a></li>
+    <li><a href="#用-go-實作-jwt-身份驗證">用 Go 實作 JWT 身份驗證</a>
+      <ul>
+        <li><a href="#產生-jwt">產生 JWT</a></li>
+        <li><a href="#驗證-jwt">驗證 JWT</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>JWT 是 JSON Web Token 的簡寫，它是一種開放標準 <a href="https://www.rfc-editor.org/rfc/rfc7519" target="_blank" rel="noopener noreffer ">RFC 7519</a>，此標準定義了一種緊湊且獨立的方式，用 JSON 物件在雙方之間安全地傳輸信息。</p>
+<h2 id="什麼是-jwt">什麼是 JWT</h2>
+<p>簡單來說，它是一個 JSON 格式的加密字串，其中包含的 Secret 允許我們可以驗證不同服務的請求者，是一種在有效時間內，可以利用 token 要求對應操作權限的一種方法。</p>
+<h2 id="什麼時候會使用-jwt">什麼時候會使用 JWT</h2>
+<ul>
+<li>Authorization<br>
+這是使用 JWT 最常見的場景，當用戶登入後，服務端會發給用戶 JWT ，往後用戶的請求只要帶著 JWT ，使用戶就可以訪問該 JWT 可以訪問的服務與資源。</li>
+<li>Information Exchange<br>
+因為 JWT 可以簽章，所以它是雙方之間傳輸資訊的好方法，舉例來說，使用公/私鑰，你可以確認請求者是不是正確的人，此外，由於簽章是使用 Header 與 Payload ，你還可以驗證內容是否被篡改過。</li>
+</ul>
+<h2 id="jwt-結構">JWT 結構</h2>
+<p>JWT 是由三個部位並用 <code>.</code> 組成的，分別是：</p>
+<ul>
+<li>Header</li>
+<li>Payload</li>
+<li>Signature</li>
+</ul>
+<p>完整的 JWT 如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/X2f2IA9.png"
+        data-srcset="https://imgur.com/X2f2IA9.png, https://imgur.com/X2f2IA9.png 1.5x, https://imgur.com/X2f2IA9.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/X2f2IA9.png"
+        title="https://imgur.com/X2f2IA9.png" /></p>
+<h3 id="header">Header</h3>
+<p>Header 由兩個部分組成，分別是 token 的型態（也就是 JWT）跟使用的簽章演算法</p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;typ&#34;</span><span class="p">:</span> <span class="s2">&#34;JWT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;alg&#34;</span><span class="p">:</span> <span class="s2">&#34;HS256&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這個 json 會以 <code>Base64Url</code> 編碼成 JWT 的第一個部位（xxxxx）</p>
+<h3 id="payload">Payload</h3>
+<p>Payload 包含 Claims ， Claims 是關於實體（通常是用戶）和附加數據的聲明， Claims 有三種類型： <em>registered</em>, <em>public</em> and <em>private</em> claims 。</p>
+<ul>
+<li>
+<p>Registered Claims<br>
+它是一組由 <a href="https://www.rfc-editor.org/rfc/rfc7519#:~:text=May%202015%0A%0A%0A4.1.-,registered%20claim%20names,-The%20following%20Claim" target="_blank" rel="noopener noreffer ">RFC 7519</a> 定義的聲明，沒有強制性要使用，但建議使用，可以提供一組有用的、可互相操作的聲明，例如： iss, exp, sub, aud 。</p>
+</li>
+<li>
+<p>Public Claims<br>
+由 RFC 7519 以外的人定義的聲明，且被公開在 <a href="https://www.iana.org/assignments/jwt/jwt.xhtml#:~:text=RFC7519%2C%20Section%204.1.7%5D-,name,%5BRFC9321%2C%20Section%203.2.3%5D,-JWT%20Confirmation%20Methods" target="_blank" rel="noopener noreffer ">IANA JSON Web Token Registry</a> ，例如： preferred_username 。</p>
+</li>
+<li>
+<p>Private Claims<br>
+供 JWT 發行者與用戶雙方使用的自定義聲明，既不是 registered 也不是 public claims，這意味著在你的應用程式之外，該聲明可能無法被正確的理解，因為別的應用程式可能沒有使用相同名稱的聲明或使用聲明的方法與你不同。</p>
+</li>
+</ul>
+<p>一個 Payload 範例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sub&#34;</span><span class="p">:</span> <span class="s2">&#34;1234567890&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;vito&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;exp&#34;</span><span class="p">:</span> <span class="mi">15323232</span><span class="p">,</span> <span class="c1">// the expiration time on or after which the JWT must not be accepted for processing
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;iat&#34;</span><span class="p">:</span> <span class="mi">14567766</span> <span class="c1">// when the token was issues
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Payload 會透過 <code>Base64Url</code> 編碼成 JWT 的第二個部位（yyyyy）。</p>
+<blockquote>
+<p>請注意，對於已簽章的 token ，雖然受到防止篡改的保護，但它是任何人都可以解讀的，所以請不要將敏感信息（密碼），放在 Header 或 Payload ，除非它是加密過的。</p>
+</blockquote>
+<h3 id="signature">Signature</h3>
+<p>為了創建 Signature ，必須採用已編碼過的 Header 、已編碼過的 Payload 、 Secret 、 Header 指定的演算法並將其進行簽章。</p>
+<p>例如，使用 HMAC SHA256 算法，會依照以下方式創建 Signature（zzzzz）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HMACSHA256(
+</span></span><span class="line"><span class="cl">    base64UrlEncode(header) + &#34;.&#34; + 
+</span></span><span class="line"><span class="cl">    base64UrlEncode(payload),
+</span></span><span class="line"><span class="cl">    secret
+</span></span><span class="line"><span class="cl">)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Signature 用於驗證信息沒有被篡改過，對於使用私鑰簽章的 token ，它還可以驗證 JWT 的請求者</p>
+<h3 id="組合成-jwt-結構">組合成 JWT 結構</h3>
+<p>由已用 Base64Url 編譯過的 Header 、 Payload 、 Signature ，三個 Base64-URL 字串組合而成，可以很容易的在 HTML 和 HTTP 環境中傳遞，與基於 XML 標準（如 SAML） 相比更加緊湊。</p>
+<p>下面展示一個 JWT ，他對前面的 Header 、 Payload 進行編碼，並使用 secret 進行簽名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+</span></span><span class="line"><span class="cl">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6InZpdG8iLCJleHAiOjE1MzIzMjMyLCJpYXQiOjE0NTY3NzY2fQ.
+</span></span><span class="line"><span class="cl">4FgwaKyx5eGFkJUoEVD_Po5p9jjjWOcl4YnjpDBwZPs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你可以使用 <a href="https://jwt.io/" target="_blank" rel="noopener noreffer ">JWT Debugger</a> 驗證、解碼和生成 JWT</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgur.com/Hf0e2Jo.png"
+        data-srcset="https://imgur.com/Hf0e2Jo.png, https://imgur.com/Hf0e2Jo.png 1.5x, https://imgur.com/Hf0e2Jo.png 2x"
+        data-sizes="auto"
+        alt="https://imgur.com/Hf0e2Jo.png"
+        title="https://imgur.com/Hf0e2Jo.png" /></p>
+<h2 id="jwt-如何運作">JWT 如何運作</h2>
+<p>在身份驗證中，會如下圖所示，當用戶成功登入後，會回傳一個 JSON Web Token ，之後在有限時間內，可以使用 token 做特定的操作或請求，不需重複執行登入的動作，由於 token 是憑證，因此必須注意防止出現安全問題，通常不應保留過期的 token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><div class="mermaid" id="id-1"></div>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>用戶使用帳號密碼登入</li>
+<li>驗證用戶帳號密碼的正確性</li>
+<li>回覆驗證結果</li>
+<li>如果驗證成功會產生 signature</li>
+<li>得到 JWT</li>
+<li>如果驗證成功，用戶會得到 JWT</li>
+</ol>
+<p>每當用戶想訪問受保護的路由或資源時，用戶都應發送 JWT ，因為 JWT 不記名的關係，所以通常會在驗證的 header 中使用 Bearer 模式（如果利用 Authorization header 傳送 token ，就不會有 CORS 問題，因為它不使用 cookie），內容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Authorization: Bearer &lt;token&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>由於缺乏安全性，<a href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#local-storage" target="_blank" rel="noopener noreffer ">不應該將敏感資訊儲存在瀏覽器中</a></p>
+<h2 id="用-go-實作-jwt-身份驗證">用 Go 實作 JWT 身份驗證</h2>
+<h3 id="產生-jwt">產生 JWT</h3>
+<p>當用戶成功登入後，會透過 <code>generateJWTToken()</code> 產生 JWT 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">JWTClaims</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Email</span> <span class="kt">string</span> <span class="s">`json:&#34;email&#34;`</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">jwt</span><span class="p">.</span><span class="nx">RegisteredClaims</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">generateJWTToken</span><span class="p">(</span><span class="nx">username</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">token</span> <span class="o">:=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">NewWithClaims</span><span class="p">(</span><span class="nx">jwt</span><span class="p">.</span><span class="nx">SigningMethodHS256</span><span class="p">,</span> <span class="nx">JWTClaims</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;xxxVitoxxx@gmail.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">RegisteredClaims</span><span class="p">:</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">RegisteredClaims</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">NotBefore</span><span class="p">:</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">NewNumericDate</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">IssuedAt</span><span class="p">:</span>  <span class="nx">jwt</span><span class="p">.</span><span class="nf">NewNumericDate</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">ExpiresAt</span><span class="p">:</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">NewNumericDate</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Minute</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">token</span><span class="p">.</span><span class="nf">SignedString</span><span class="p">(</span><span class="nx">Secret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第 1 行： 宣告你定義的 Claims 。<br>
+第 7 行： 先用指定的簽章演算法和定義的 Cliams 去建立 token 。<br>
+第 10~12 行： 定義要使用的 Registered Claims 。<br>
+第 15 行： 將 token 進行簽章，並回傳 JWT 。</p>
+<h3 id="驗證-jwt">驗證 JWT</h3>
+<p>這邊將驗證 JWT 的方法寫成 middleware ，讓需有 JWT 權限才能訪問的 API 會先經過該 middleware 驗證 JWT ，驗證成功後才能獲取 API 資源。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">middlewareVerifyJWT</span><span class="p">()</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">auth</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">GetHeader</span><span class="p">(</span><span class="s">&#34;Authorization&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">auth</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;missing authorization&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">bearer</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span> <span class="s">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">bearer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#34;Bearer&#34;</span> <span class="o">||</span> <span class="nb">len</span><span class="p">(</span><span class="nx">bearer</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">||</span> <span class="nb">len</span><span class="p">(</span><span class="nx">bearer</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;invalid authorization&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">tokenDecode</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">ParseWithClaims</span><span class="p">(</span><span class="nx">bearer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">&amp;</span><span class="nx">JWTClaims</span><span class="p">{},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">token</span> <span class="o">*</span><span class="nx">jwt</span><span class="p">.</span><span class="nx">Token</span><span class="p">)</span> <span class="p">(</span><span class="kd">interface</span><span class="p">{},</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">Secret</span><span class="p">,</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;invalid token&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">tokenDecode</span><span class="p">.</span><span class="nx">Claims</span><span class="p">.(</span><span class="o">*</span><span class="nx">JWTClaims</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="o">||</span> <span class="p">!</span><span class="nx">tokenDecode</span><span class="p">.</span><span class="nx">Valid</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;invalid token&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第 3~7 行： 從 request 的 header 取得 Authorization 的資料，並檢查 Authorization 是否有資料。<br>
+第 9~13 行： 檢查是否為 Bearer token ，且 token 是否有資料。<br>
+第 15~21 行： 透過自定義的 Claims 對 token 進行解析，並確認解析是否有錯誤。<br>
+第 23~27 行： 驗證 tokenDecode 的 Claims 是否是我們自定義的 JWTClaims 型態，及解析完的 token 是否有效。</p>
+<p><a href="https://github.com/xxxVitoxxx/notes-and-issue/blob/main/example/JWT/main.go" target="_blank" rel="noopener noreffer ">完整程式碼</a></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://jwt.io/introduction" target="_blank" rel="noopener noreffer ">jwt.io</a></li>
+<li><a href="https://dev.to/moe23/intro-to-jwt-mcb" target="_blank" rel="noopener noreffer ">搭配上面一起</a></li>
+<li><a href="https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%87%82%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/jwt-json-web-token-%E5%8E%9F%E7%90%86%E4%BB%8B%E7%B4%B9-74abfafad7ba" target="_blank" rel="noopener noreffer ">JWT(JSON Web Token) — 原理介紹</a></li>
+<li><a href="https://medium.com/mr-efacani-teatime/%E6%B7%BA%E8%AB%87jwt%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%88%87%E9%81%A9%E7%94%A8%E6%83%85%E5%A2%83-301b5491b60e" target="_blank" rel="noopener noreffer ">淺談JWT的安全性與適用情境</a></li>
+<li><a href="https://waynestalk.com/go-jwt-tutorial/" target="_blank" rel="noopener noreffer ">用 Go 實現 JWT Based 驗證</a></li>
+<li><a href="https://www.youtube.com/watch?v=-Eei8eik1Io" target="_blank" rel="noopener noreffer ">Secure Your Go REST API with JWT Authentication</a></li>
+<li><a href="https://www.youtube.com/watch?v=U6OcC0yq1CE" target="_blank" rel="noopener noreffer ">JSON Web tokens vs sessions for authentication | should you use JWTs as session tokens?</a></li>
+<li><a href="https://tutorialedge.net/golang/authenticating-golang-rest-api-with-jwts/" target="_blank" rel="noopener noreffer ">Securing Your Go REST APIs With JWTs</a></li>
+<li><a href="https://dev.to/cotter/what-on-earth-is-oauth-a-super-simple-intro-to-oauth-2-0-access-tokens-and-how-to-implement-it-in-your-site-48jo#what-is-oauth-20" target="_blank" rel="noopener noreffer ">What on Earth Is OAuth? ASuper Simple Intro to OAuth 2.0, Access Tokens, and How to Implement It in Your Site</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10225823" target="_blank" rel="noopener noreffer ">[Day22] 解析 jwt (二)</a></li>
+<li><a href="https://eddycjy.gitbook.io/golang/di-3-ke-gin/log" target="_blank" rel="noopener noreffer ">3.6 编写一个简单的文件日志</a>  - <a href="https://ithelp.ithome.com.tw/articles/10203292" target="_blank" rel="noopener noreffer ">Day 19 - 二周目 - 帳密認証與JWT (JSON Web Token)傳遞</a></li>
+<li><a href="https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-token-claims#public-claims" target="_blank" rel="noopener noreffer ">JSON Web Token Claims</a></li>
+<li><a href="https://www.readfog.com/a/1643064569512431616" target="_blank" rel="noopener noreffer ">Golang 之 JWT 實現</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023/02/jwt/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/2023/02/jwt/" data-title="JWT" data-hashtags="jwt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/2023/02/jwt/" data-hashtag="jwt"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/2023/02/jwt/" data-title="JWT"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/2023/02/jwt/" data-title="JWT"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/2023/02/jwt/" data-title="JWT" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/jwt/">jwt</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023/01/queue/" class="prev" rel="prev" title="Queue"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Queue</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">continue learning</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@9.1.3/dist/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"sequenceDiagram;\nautonumber\nparticipant C as Client\nparticipant A as Authentication\nparticipant S as Server\nC-\u003e\u003e+A: login with account and password\nA-\u003e\u003e+S: get account information\nS--\u003e\u003e-A: reply\nactivate A\nA-\u003e\u003eA: authenticate and generate signature\nA--\u003e\u003eA: reply result\ndeactivate A\nA--\u003e\u003e-C: reply JWT if have a valid signature"},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

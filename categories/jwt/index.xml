@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>jwt - Category - vito&#39;s blog</title>
+        <link>https://xxxVitoxxx.github.io/categories/jwt/</link>
+        <description>jwt - Category - vito&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 09 Feb 2023 20:46:28 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/categories/jwt/" rel="self" type="application/rss+xml" /><item>
+    <title>JWT</title>
+    <link>https://xxxVitoxxx.github.io/2023/02/jwt/</link>
+    <pubDate>Thu, 09 Feb 2023 20:46:28 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/2023/02/jwt/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>JWT 是 JSON Web Token 的簡寫，它是一種開放標準 <a href="https://www.rfc-editor.org/rfc/rfc7519" target="_blank" rel="noopener noreffer ">RFC 7519</a>，此標準定義了一種緊湊且獨立的方式，用 JSON 物件在雙方之間安全地傳輸信息。</p>]]></description>
+</item>
+</channel>
+</rss>
