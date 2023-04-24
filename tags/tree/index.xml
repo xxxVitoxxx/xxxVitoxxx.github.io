@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tree - Tag - vito&#39;s blog</title>
+        <link>https://xxxVitoxxx.github.io/tags/tree/</link>
+        <description>tree - Tag - vito&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Apr 2023 23:24:54 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/tags/tree/" rel="self" type="application/rss+xml" /><item>
+    <title>Tree</title>
+    <link>https://xxxVitoxxx.github.io/2023/04/tree/</link>
+    <pubDate>Mon, 24 Apr 2023 23:24:54 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/2023/04/tree/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>因為他跟倒過來的樹很相似，所以被稱為 Tree，日常中，許多應用都與他脫離不了關係，像是組織架構圖、資料儲存、 sitemap 等等&hellip;</p>
+<p>若熟悉 Linked List 將會更容易理解 Tree ，想了解 Linke List 可以參考<a href="https://xxxvitoxxx.github.io/2023/03/linked_list/" target="_blank" rel="noopener noreffer ">文章</a>。</p>]]></description>
+</item>
+</channel>
+</rss>

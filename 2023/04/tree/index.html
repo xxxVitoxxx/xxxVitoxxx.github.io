@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Tree - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="Tree" />
+<meta property="og:description" content="因為他跟倒過來的樹很相似，所以被稱為 Tree，日常中，許多應用都與他脫離不了關係，像是組織架構圖、資料儲存、 sitemap 等等&hellip;
+若熟悉 Linked List 將會更容易理解 Tree ，想了解 Linke List 可以參考文章。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/2023/04/tree/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/2023/04/tree/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-24T23:24:54+08:00" />
+<meta property="article:modified_time" content="2023-04-24T23:24:54+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/2023/04/tree/featured-image.png"/>
+<meta name="twitter:title" content="Tree"/>
+<meta name="twitter:description" content="因為他跟倒過來的樹很相似，所以被稱為 Tree，日常中，許多應用都與他脫離不了關係，像是組織架構圖、資料儲存、 sitemap 等等&hellip;
+若熟悉 Linked List 將會更容易理解 Tree ，想了解 Linke List 可以參考文章。"/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/2023/04/tree/" /><link rel="prev" href="https://xxxVitoxxx.github.io/2023/03/linked_list/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Tree",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/2023\/04\/tree\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tree, data structure","wordcount":  585 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/2023\/04\/tree\/","datePublished": "2023-04-24T23:24:54+08:00","dateModified": "2023-04-24T23:24:54+08:00","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tree</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-structure/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>data structure</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-24">2023-04-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;585 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2023/04/tree/featured-image.png"
+        data-srcset="/2023/04/tree/featured-image.png, /2023/04/tree/featured-image.png 1.5x, /2023/04/tree/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/2023/04/tree/featured-image.png"
+        title="/2023/04/tree/featured-image.png" width="2048" height="1365" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#basic-terminologies-in-tree-data-structure">Basic Terminologies in Tree Data Structure</a>
+      <ul>
+        <li><a href="#node">Node</a></li>
+        <li><a href="#edge">Edge</a></li>
+        <li><a href="#root">Root</a></li>
+        <li><a href="#parent">Parent</a></li>
+        <li><a href="#child">Child</a></li>
+        <li><a href="#siblings">Siblings</a></li>
+        <li><a href="#ancestor-of-a-node">Ancestor of a Node</a></li>
+        <li><a href="#descendant">Descendant</a></li>
+        <li><a href="#neighbor-of-a-node">Neighbor of a Node</a></li>
+        <li><a href="#leaf">Leaf</a></li>
+        <li><a href="#subtree">Subtree</a></li>
+        <li><a href="#level">Level</a></li>
+      </ul>
+    </li>
+    <li><a href="#properties-of-a-tree">Properties of a Tree</a>
+      <ul>
+        <li><a href="#number-of-edges">Number of Edges</a></li>
+        <li><a href="#depth-of-a-node">Depth of a Node</a></li>
+        <li><a href="#height-of-a-tree">Height of a Tree</a></li>
+        <li><a href="#height-of-a-node">Height of a Node</a></li>
+        <li><a href="#degree-of-a-node">Degree of a Node</a></li>
+        <li><a href="#degree-of-a-tree">Degree of a Tree</a></li>
+      </ul>
+    </li>
+    <li><a href="#types-of-tree-in-data-structure">Types of Tree in Data Structure</a>
+      <ul>
+        <li><a href="#general-tree">General Tree</a>
+          <ul>
+            <li><a href="#properties">Properties</a></li>
+          </ul>
+        </li>
+        <li><a href="#binary-tree">Binary Tree</a>
+          <ul>
+            <li><a href="#properites">Properites</a></li>
+            <li><a href="#types-of-binary-tree">Types of Binary Tree</a>
+              <ul>
+                <li><a href="#full-binary-tree">Full Binary Tree</a></li>
+                <li><a href="#complete-binary-tree">Complete Binary Tree</a></li>
+                <li><a href="#perfect-binary-tree">Perfect Binary Tree</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#binary-search-tree">Binary Search Tree</a>
+          <ul>
+            <li><a href="#properties-1">Properties</a></li>
+            <li><a href="#advantages-of-bst">Advantages of BST</a></li>
+            <li><a href="#disadvantages-of-bst">Disadvantages of BST</a></li>
+          </ul>
+        </li>
+        <li><a href="#self-balanced-binary-search-tree">Self-Balanced Binary Search Tree</a>
+          <ul>
+            <li><a href="#properties-2">Properties</a></li>
+            <li><a href="#types-of-self-balanced-binary-search-tree">Types of Self-Balanced Binary Search Tree</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>因為他跟倒過來的樹很相似，所以被稱為 Tree，日常中，許多應用都與他脫離不了關係，像是組織架構圖、資料儲存、 sitemap 等等&hellip;</p>
+<p>若熟悉 Linked List 將會更容易理解 Tree ，想了解 Linke List 可以參考<a href="https://xxxvitoxxx.github.io/2023/03/linked_list/" target="_blank" rel="noopener noreffer ">文章</a>。</p>
+<h2 id="introduction">Introduction</h2>
+<figure><a class="lightgallery" href="https://imgur.com/pJN1Paw.png" title="Introduction" data-thumbnail="https://imgur.com/pJN1Paw.png" data-sub-html="<h2>圖片來源 https://www.geeksforgeeks.org/introduction-to-tree-data-structure-and-algorithm-tutorials/</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/pJN1Paw.png"
+            data-srcset="https://imgur.com/pJN1Paw.png, https://imgur.com/pJN1Paw.png 1.5x, https://imgur.com/pJN1Paw.png 2x"
+            data-sizes="auto"
+            alt="Introduction" />
+    </a><figcaption class="image-caption">圖片來源 <a href="https://www.geeksforgeeks.org/introduction-to-tree-data-structure-and-algorithm-tutorials/" target="_blank" rel="noopener noreffer ">https://www.geeksforgeeks.org/introduction-to-tree-data-structure-and-algorithm-tutorials/</a></figcaption>
+    </figure>
+<p>Tree 是一種非線性資料結構，由 node 集合組成的階層式結構，且 Node 之間會透過 Edge 連接，表明兩個節點之間的關係。</p>
+<h2 id="basic-terminologies-in-tree-data-structure">Basic Terminologies in Tree Data Structure</h2>
+<h3 id="node">Node</h3>
+<p>是 Tree 基本組成的一部分，它是一種結構，包含本身資料及 Child Node 的 Pointer 。</p>
+<h3 id="edge">Edge</h3>
+<p>是 Tree 的另一個基本組成，它連接兩個 Node 表示兩個 Node 之間的關係，每個 Node 可能會有數條 Outgoing Edge ，除了 Root Node 之外，每個 Node 一定會有一條 Incoming Edge 。</p>
+<h3 id="root">Root</h3>
+<p>在 Tree 中， Root 是第一個 Node ，它是 Tree 的 Initial Node ，如上圖 A 為 Root 。</p>
+<h3 id="parent">Parent</h3>
+<p>A 通過 Outgoing Edge 連接到 B 和 C ，所以 A 為 B 和 C 的 Parent 。</p>
+<h3 id="child">Child</h3>
+<p>A 通過 Outgoing Edge 連接到 B 和 C ，所以 B 和 C 為 A 的 Child 。</p>
+<h3 id="siblings">Siblings</h3>
+<p>擁有相同 Parent 的 Node 稱為 Siblings ，如上圖 D 、 E 稱為 Siblings 。</p>
+<h3 id="ancestor-of-a-node">Ancestor of a Node</h3>
+<p>從 Root 透過 Edge 到該 Node 中的任何 Node 都稱為該 Node 的祖先，如上圖， D 的祖先有 B 和 A 。</p>
+<h3 id="descendant">Descendant</h3>
+<p>該 Node 透過 Outgoing 到 Leaf Node 中的所有 Node 稱為該 Node 的 Descendant ，如上圖。 I 、 M 、 N 為 E 的後裔。</p>
+<h3 id="neighbor-of-a-node">Neighbor of a Node</h3>
+<p>該 Node 的 Parent 與 Child 都稱為該 Node 的鄰居，如上圖， D 的鄰居有 B 和 H 。</p>
+<h3 id="leaf">Leaf</h3>
+<p>沒有任何 Child 的 Node ，也被稱為 External Node ，如上圖 K 、 L 、 M 、 N 、 O 、 P 為 Leaf 。</p>
+<h3 id="subtree">Subtree</h3>
+<p>Node 與其 Descendant 組成的 Tree 。</p>
+<h3 id="level">Level</h3>
+<p>從 Root 到 Node 的 Edge 數稱為 Level ，如上圖 I 的 Level 為 3 。</p>
+<h2 id="properties-of-a-tree">Properties of a Tree</h2>
+<h3 id="number-of-edges">Number of Edges</h3>
+<p>Node 到 Node 間只有一條 Edge ，如果 Tree 有 n 個 Node ，那它就有 n-1 條 Edge 。</p>
+<h3 id="depth-of-a-node">Depth of a Node</h3>
+<p>Root 到 Node 的 Edge 數，如 B 的 Degree 為 1 ， I 的 Degree 為 3 。</p>
+<h3 id="height-of-a-tree">Height of a Tree</h3>
+<p>Root 到 Leaf 的最大 Edge ，如上圖，樹高為 4 。</p>
+<h3 id="height-of-a-node">Height of a Node</h3>
+<p>Node 到 Leaf 的最大 Edge ，如上圖 C 的 Height 為 3 。</p>
+<h3 id="degree-of-a-node">Degree of a Node</h3>
+<p>Node 擁有的 Child Node 數量稱為 Node 的 Degree ，如上圖 A 有 B 、 C 兩個 Child Node ，所以 A 的 Degree 為 2 ;而 L 為 Leaf Node 所以 L 的 Degree 為 0 。</p>
+<h3 id="degree-of-a-tree">Degree of a Tree</h3>
+<p>樹中 Node 最大的 Degree，如上圖 A 、 B 、 H 、 I 、 C 、 J 的 Degree 都是 2 ，為該樹 Node 最大的 Degree ，所以該樹的 Degree 為 2 。</p>
+<h2 id="types-of-tree-in-data-structure">Types of Tree in Data Structure</h2>
+<p>Tree 有非常多種類型，以下會簡單介紹幾種 Tree 的特性。</p>
+<h3 id="general-tree">General Tree</h3>
+<p><figure><a class="lightgallery" href="https://imgur.com/48sTcWd.png" title="General Tree" data-thumbnail="https://imgur.com/48sTcWd.png" data-sub-html="<h2>圖片來源 https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/48sTcWd.png"
+            data-srcset="https://imgur.com/48sTcWd.png, https://imgur.com/48sTcWd.png 1.5x, https://imgur.com/48sTcWd.png 2x"
+            data-sizes="auto"
+            alt="General Tree" />
+    </a><figcaption class="image-caption">圖片來源 <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure" target="_blank" rel="noopener noreffer ">https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</a></figcaption>
+    </figure><br>
+一般樹是一種對層次結構沒有限制的樹。</p>
+<h4 id="properties">Properties</h4>
+<ul>
+<li>Node 間的資料是無序的</li>
+<li>可以有多個 Child ，因此， Root 就像其他 Subtree 的超集</li>
+</ul>
+<h3 id="binary-tree">Binary Tree</h3>
+<p><figure><a class="lightgallery" href="https://imgur.com/MzUSr9j.png" title="Binary Tree" data-thumbnail="https://imgur.com/MzUSr9j.png" data-sub-html="<h2>圖片來源 https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/MzUSr9j.png"
+            data-srcset="https://imgur.com/MzUSr9j.png, https://imgur.com/MzUSr9j.png 1.5x, https://imgur.com/MzUSr9j.png 2x"
+            data-sizes="auto"
+            alt="Binary Tree" />
+    </a><figcaption class="image-caption">圖片來源 <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure" target="_blank" rel="noopener noreffer ">https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</a></figcaption>
+    </figure><br>
+二元樹</p>
+<h4 id="properites">Properites</h4>
+<ul>
+<li>每個 Node 只能有 0~2 個 Child ，分別稱為 Left Node 和 Right Node</li>
+</ul>
+<h4 id="types-of-binary-tree">Types of Binary Tree</h4>
+<p>二元樹依 Child Mode 可分為三種類型。</p>
+<h5 id="full-binary-tree">Full Binary Tree</h5>
+<p>每個 Node 都有 0~2 個 Child 。</p>
+<h5 id="complete-binary-tree">Complete Binary Tree</h5>
+<p>除了 Leaf 之外，每個 Node 都有 0~2 個 Child ，但 Leaf 必須在同一個 Level 。</p>
+<h5 id="perfect-binary-tree">Perfect Binary Tree</h5>
+<p>除了 Leaf 之外，每個 Node 都有 2 個 Child ，且所有 Leaf 都在同一個 Level 。</p>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<figure><a class="lightgallery" href="https://imgur.com/7O4UQlV.png" title="Binary Search Tree" data-thumbnail="https://imgur.com/7O4UQlV.png" data-sub-html="<h2>圖片來源 https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/7O4UQlV.png"
+            data-srcset="https://imgur.com/7O4UQlV.png, https://imgur.com/7O4UQlV.png 1.5x, https://imgur.com/7O4UQlV.png 2x"
+            data-sizes="auto"
+            alt="Binary Search Tree" />
+    </a><figcaption class="image-caption">圖片來源 <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure" target="_blank" rel="noopener noreffer ">https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</a></figcaption>
+    </figure>
+<p>二元搜尋樹（BST）也是二元樹的一種，它擁有二元樹的所有屬性，但基於某些額外特性，使得二元搜尋樹來的相對高效。</p>
+<h4 id="properties-1">Properties</h4>
+<ul>
+<li>遵循二元樹的所有特性</li>
+<li>所有 Node 的資料不會重複</li>
+<li>Right Node 必定大於 Parent 且 Parent 必定大於 Left Node</li>
+</ul>
+<h4 id="advantages-of-bst">Advantages of BST</h4>
+<ol>
+<li>與二元樹相比較為高效，因為執行各種操作的時間複雜度較低</li>
+<li>由於 Node 的資料是有序的，所以搜尋變得更簡單</li>
+<li>因為有序的特性，要查詢某範圍資料的 Node 時使得較為簡單</li>
+</ol>
+<h4 id="disadvantages-of-bst">Disadvantages of BST</h4>
+<figure><a class="lightgallery" href="https://imgur.com/dnm9ybJ.png" title="disadvantages of BST" data-thumbnail="https://imgur.com/dnm9ybJ.png" data-sub-html="<h2>圖片來源 https://runestone.academy/ns/books/published/pythonds/Trees/SearchTreeAnalysis.html</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/dnm9ybJ.png"
+            data-srcset="https://imgur.com/dnm9ybJ.png, https://imgur.com/dnm9ybJ.png 1.5x, https://imgur.com/dnm9ybJ.png 2x"
+            data-sizes="auto"
+            alt="disadvantages of BST" />
+    </a><figcaption class="image-caption">圖片來源 <a href="https://runestone.academy/ns/books/published/pythonds/Trees/SearchTreeAnalysis.html" target="_blank" rel="noopener noreffer ">https://runestone.academy/ns/books/published/pythonds/Trees/SearchTreeAnalysis.html</a></figcaption>
+    </figure>
+<p>為了解決過度傾斜的問題，而有了自平衡二元搜尋樹。</p>
+<h3 id="self-balanced-binary-search-tree">Self-Balanced Binary Search Tree</h3>
+<p>自平衡二元搜尋樹可以避免二元搜尋樹出現過度傾斜的狀況。</p>
+<h4 id="properties-2">Properties</h4>
+<ul>
+<li>假設 m 是 Left Subtree 的高度， n 是 Right Subtree 的高度，其 m-n 需等於 1 、 0 或是 -1</li>
+<li>一但 m-n 相差超過 1 ，它們會自我平衡，使左右子樹高度不會相差大於 1</li>
+</ul>
+<h4 id="types-of-self-balanced-binary-search-tree">Types of Self-Balanced Binary Search Tree</h4>
+<p>屬於自平衡二元搜尋樹還有以下幾種類型。</p>
+<ul>
+<li>AVL Tree</li>
+<li>Red Black Tree</li>
+<li>B Tree</li>
+<li>B+ Tree</li>
+<li>Splay Tree</li>
+<li>Priority Search Tree</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://runestone.academy/ns/books/published/pythonds/Trees/VocabularyandDefinitions.html" target="_blank" rel="noopener noreffer ">7.3. Vocabulary and Definitions</a></li>
+<li><a href="https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm" target="_blank" rel="noopener noreffer ">Data Structure and Algorithms - Tree</a></li>
+<li><a href="https://www.youtube.com/watch?v=qH6yxkw0u78" target="_blank" rel="noopener noreffer ">Data structures: Introduction to Trees - youtube</a></li>
+<li><a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure" target="_blank" rel="noopener noreffer ">An Introduction to Tree in Data Structure</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-04-24</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023/04/tree/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/2023/04/tree/" data-title="Tree" data-hashtags="tree,data structure"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/2023/04/tree/" data-hashtag="tree"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/2023/04/tree/" data-title="Tree"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/2023/04/tree/" data-title="Tree"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/2023/04/tree/" data-title="Tree" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tree/">tree</a>,&nbsp;<a href="/tags/data-structure/">data structure</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023/03/linked_list/" class="prev" rel="prev" title="Linked List"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linked List</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">continue learning</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
