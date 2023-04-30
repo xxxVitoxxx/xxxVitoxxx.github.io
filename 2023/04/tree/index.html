@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xxxVitoxxx.github.io/2023/04/tree/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/2023/04/tree/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-04-24T23:24:54+08:00" />
-<meta property="article:modified_time" content="2023-04-24T23:24:54+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+<meta property="article:modified_time" content="2023-05-01T00:39:37+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xxxVitoxxx.github.io/2023/04/tree/featured-image.png"/>
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/xxxVitoxxx.github.io\/2023\/04\/tree\/"
-        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tree, data structure","wordcount":  585 ,
-        "url": "https:\/\/xxxVitoxxx.github.io\/2023\/04\/tree\/","datePublished": "2023-04-24T23:24:54+08:00","dateModified": "2023-04-24T23:24:54+08:00","publisher": {
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tree, data structure","wordcount":  533 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/2023\/04\/tree\/","datePublished": "2023-04-24T23:24:54+08:00","dateModified": "2023-05-01T00:39:37+08:00","publisher": {
             "@type": "Organization",
             "name": "vito","logo": {
                     "@type": "ImageObject",
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tree</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-structure/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>data structure</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-24">2023-04-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;585 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-24">2023-04-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;533 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -163,13 +163,6 @@
         <li><a href="#binary-tree">Binary Tree</a>
           <ul>
             <li><a href="#properites">Properites</a></li>
-            <li><a href="#types-of-binary-tree">Types of Binary Tree</a>
-              <ul>
-                <li><a href="#full-binary-tree">Full Binary Tree</a></li>
-                <li><a href="#complete-binary-tree">Complete Binary Tree</a></li>
-                <li><a href="#perfect-binary-tree">Perfect Binary Tree</a></li>
-              </ul>
-            </li>
           </ul>
         </li>
         <li><a href="#binary-search-tree">Binary Search Tree</a>
@@ -206,9 +199,9 @@
 <p>Tree 是一種非線性資料結構，由 node 集合組成的階層式結構，且 Node 之間會透過 Edge 連接，表明兩個節點之間的關係。</p>
 <h2 id="basic-terminologies-in-tree-data-structure">Basic Terminologies in Tree Data Structure</h2>
 <h3 id="node">Node</h3>
-<p>是 Tree 基本組成的一部分，它是一種結構，包含本身資料及 Child Node 的 Pointer 。</p>
+<p>是 Tree 基本組成的一部分，它是一種結構，包含本身資料及 Child 的 Pointer 。</p>
 <h3 id="edge">Edge</h3>
-<p>是 Tree 的另一個基本組成，它連接兩個 Node 表示兩個 Node 之間的關係，每個 Node 可能會有數條 Outgoing Edge ，除了 Root Node 之外，每個 Node 一定會有一條 Incoming Edge 。</p>
+<p>是 Tree 的另一個基本組成，它連接兩個 Node 表示兩個 Node 之間的關係，每個 Node 可能會有數條 Outgoing Edge ，除了 Root 之外，每個 Node 一定會有一條 Incoming Edge 。</p>
 <h3 id="root">Root</h3>
 <p>在 Tree 中， Root 是第一個 Node ，它是 Tree 的 Initial Node ，如上圖 A 為 Root 。</p>
 <h3 id="parent">Parent</h3>
@@ -277,14 +270,6 @@
 <ul>
 <li>每個 Node 只能有 0~2 個 Child ，分別稱為 Left Node 和 Right Node</li>
 </ul>
-<h4 id="types-of-binary-tree">Types of Binary Tree</h4>
-<p>二元樹依 Child Mode 可分為三種類型。</p>
-<h5 id="full-binary-tree">Full Binary Tree</h5>
-<p>每個 Node 都有 0~2 個 Child 。</p>
-<h5 id="complete-binary-tree">Complete Binary Tree</h5>
-<p>除了 Leaf 之外，每個 Node 都有 0~2 個 Child ，但 Leaf 必須在同一個 Level 。</p>
-<h5 id="perfect-binary-tree">Perfect Binary Tree</h5>
-<p>除了 Leaf 之外，每個 Node 都有 2 個 Child ，且所有 Leaf 都在同一個 Level 。</p>
 <h3 id="binary-search-tree">Binary Search Tree</h3>
 <figure><a class="lightgallery" href="https://imgur.com/7O4UQlV.png" title="Binary Search Tree" data-thumbnail="https://imgur.com/7O4UQlV.png" data-sub-html="<h2>圖片來源 https://www.simplilearn.com/tutorials/data-structure-tutorial/trees-in-data-structure</h2>">
         <img
@@ -348,7 +333,8 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2023-04-24</span>
+                <span>Updated on 2023-05-01&nbsp;<a class="git-hash" href="https://github.com/xxxVitoxxx/commit/de42b718a0b0d27d7c79210b2dcd088cd224a4f5" target="_blank" title="commit by xxxVitoxxx(bird06291994@gmail.com) de42b718a0b0d27d7c79210b2dcd088cd224a4f5: feat: modify binary tree description">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>de42b71</a></span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>

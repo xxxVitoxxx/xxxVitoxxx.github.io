@@ -15,11 +15,11 @@ Tree 是一種非線性資料結構，由 node 集合組成的階層式結構，
 
 ### Node
 
-是 Tree 基本組成的一部分，它是一種結構，包含本身資料及 Child Node 的 Pointer 。  
+是 Tree 基本組成的一部分，它是一種結構，包含本身資料及 Child 的 Pointer 。  
 
 ### Edge
 
-是 Tree 的另一個基本組成，它連接兩個 Node 表示兩個 Node 之間的關係，每個 Node 可能會有數條 Outgoing Edge ，除了 Root Node 之外，每個 Node 一定會有一條 Incoming Edge 。  
+是 Tree 的另一個基本組成，它連接兩個 Node 表示兩個 Node 之間的關係，每個 Node 可能會有數條 Outgoing Edge ，除了 Root 之外，每個 Node 一定會有一條 Incoming Edge 。  
 
 ### Root
 
@@ -109,22 +109,6 @@ Tree 有非常多種類型，以下會簡單介紹幾種 Tree 的特性。
 #### Properites
 
 - 每個 Node 只能有 0~2 個 Child ，分別稱為 Left Node 和 Right Node  
-
-#### Types of Binary Tree
-
-二元樹依 Child Mode 可分為三種類型。  
-
-##### Full Binary Tree
-
-每個 Node 都有 0~2 個 Child 。  
-
-##### Complete Binary Tree
-
-除了 Leaf 之外，每個 Node 都有 0~2 個 Child ，但 Leaf 必須在同一個 Level 。  
-
-##### Perfect Binary Tree
-
-除了 Leaf 之外，每個 Node 都有 2 個 Child ，且所有 Leaf 都在同一個 Level 。  
 
 ### Binary Search Tree
 
