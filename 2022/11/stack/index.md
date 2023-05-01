@@ -67,8 +67,7 @@ stack 結構有以下三種屬性：
 
 檢查 stack 是否有資料。  
 
-```Theme Documentation - Basics
-=1
+```go
 func (s *StackSlice) IsEmpty() bool {
     return s.top == -1
 }
