@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>algorithm - Tag - vito&#39;s blog</title>
+        <link>https://xxxVitoxxx.github.io/tags/algorithm/</link>
+        <description>algorithm - Tag - vito&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 09 Oct 2023 15:14:59 &#43;0800</lastBuildDate><atom:link href="https://xxxVitoxxx.github.io/tags/algorithm/" rel="self" type="application/rss+xml" /><item>
+    <title>Floyd Cycle Detection Algorithm</title>
+    <link>https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/</link>
+    <pubDate>Mon, 09 Oct 2023 15:14:59 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>Floyd Cycle Detection Algorithm 或 Hare-Tortoise Algorithm 是一種指針演算法。它使用兩個 pointer，以不同的速度移動，速度較快的稱為 fast ，速度較慢的稱為 slow ，所以又稱為 Fast-Slow Pointers 。</p>]]></description>
+</item>
+</channel>
+</rss>

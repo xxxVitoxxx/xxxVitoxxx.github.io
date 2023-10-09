@@ -3,9 +3,19 @@
         <title>vito&#39;s blog</title>
         <link>https://xxxVitoxxx.github.io/</link>
         <description>vito&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 May 2023 17:24:16 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 09 Oct 2023 15:14:59 &#43;0800</lastBuildDate>
             <atom:link href="https://xxxVitoxxx.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Floyd Cycle Detection Algorithm</title>
+    <link>https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/</link>
+    <pubDate>Mon, 09 Oct 2023 15:14:59 &#43;0800</pubDate>
+    <author>vito</author>
+    <guid>https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>Floyd Cycle Detection Algorithm 或 Hare-Tortoise Algorithm 是一種指針演算法。它使用兩個 pointer，以不同的速度移動，速度較快的稱為 fast ，速度較慢的稱為 slow ，所以又稱為 Fast-Slow Pointers 。</p>]]></description>
+</item>
+<item>
     <title>Binary Tree</title>
     <link>https://xxxVitoxxx.github.io/2023/05/binary_tree/</link>
     <pubDate>Mon, 01 May 2023 17:24:16 &#43;0800</pubDate>
@@ -96,16 +106,6 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.png" referrerpolicy="no-referrer">
             </div>]]></description>
-</item>
-<item>
-    <title>Git Clone With SSH Key</title>
-    <link>https://xxxVitoxxx.github.io/2021/05/git-clone-ssh-key/</link>
-    <pubDate>Mon, 17 May 2021 17:58:14 &#43;0800</pubDate>
-    <author>vito</author>
-    <guid>https://xxxVitoxxx.github.io/2021/05/git-clone-ssh-key/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.png" referrerpolicy="no-referrer">
-            </div><p>建立 ssh key 和 git clone 、 git push 教學</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Floyd Cycle Detection Algorithm - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="Floyd Cycle Detection Algorithm" />
+<meta property="og:description" content="Floyd Cycle Detection Algorithm 或 Hare-Tortoise Algorithm 是一種指針演算法。它使用兩個 pointer，以不同的速度移動，速度較快的稱為 fast ，速度較慢的稱為 slow ，所以又稱為 Fast-Slow Pointers 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-09T15:14:59+08:00" />
+<meta property="article:modified_time" content="2023-10-09T15:14:59+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/featured-image.png"/>
+<meta name="twitter:title" content="Floyd Cycle Detection Algorithm"/>
+<meta name="twitter:description" content="Floyd Cycle Detection Algorithm 或 Hare-Tortoise Algorithm 是一種指針演算法。它使用兩個 pointer，以不同的速度移動，速度較快的稱為 fast ，速度較慢的稱為 slow ，所以又稱為 Fast-Slow Pointers 。"/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" /><link rel="prev" href="https://xxxVitoxxx.github.io/2023/05/binary_tree/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Floyd Cycle Detection Algorithm",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/2023\/10\/floyd_cycle_detection_algorithm\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "algorithm","wordcount":  800 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/2023\/10\/floyd_cycle_detection_algorithm\/","datePublished": "2023-10-09T15:14:59+08:00","dateModified": "2023-10-09T15:14:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Floyd Cycle Detection Algorithm</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/algorithm/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>algorithm</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-09">2023-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;800 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2023/10/floyd_cycle_detection_algorithm/featured-image.png"
+        data-srcset="/2023/10/floyd_cycle_detection_algorithm/featured-image.png, /2023/10/floyd_cycle_detection_algorithm/featured-image.png 1.5x, /2023/10/floyd_cycle_detection_algorithm/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/2023/10/floyd_cycle_detection_algorithm/featured-image.png"
+        title="/2023/10/floyd_cycle_detection_algorithm/featured-image.png" width="1366" height="1258" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#use-case">Use case</a>
+      <ul>
+        <li><a href="#判斷-linked-list-有沒有-cycle">判斷 Linked List 有沒有 cycle</a></li>
+        <li><a href="#找到-linked-list-的中心點">找到 Linked List 的中心點</a></li>
+        <li><a href="#cycle-的長度">Cycle 的長度</a></li>
+        <li><a href="#找到-cycle-的起始點">找到 cycle 的起始點</a></li>
+      </ul>
+    </li>
+    <li><a href="#related-topics-in-leetcode">Related topics in leetcode</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Floyd Cycle Detection Algorithm 或 Hare-Tortoise Algorithm 是一種指針演算法。它使用兩個 pointer，以不同的速度移動，速度較快的稱為 fast ，速度較慢的稱為 slow ，所以又稱為 Fast-Slow Pointers 。</p>
+<h2 id="introduction">Introduction</h2>
+<p>兩個 pointer 分別為 fast 和 slow 沿著 Linked List 遍歷，fast 移動的速度會比 slow 快。一般情況下， slow 每次會往前一步，而 fast 往前的步數會是 slow 的兩倍。</p>
+<p>關鍵思想是 fast 和 slow 會從同一個位置以不同速度遍歷 Linked List ，如果存在 cycle ，兩者必然會在 cycle 中的某個點相遇。就像有兩位跑者在跑道上，雖然起跑點是一樣的，但由於某一方速度較快，且如果跑道是圓的情況下，那速度較快的跑者勢必會在某個點遇到跑得慢的跑者。另一方面如果跑道是直的，那跑的快的跑者會優先跑到終點，且過程中不會與速度較慢的跑者相遇。</p>
+<a class="lightgallery" href="https://imgur.com/EojcfDc.png" title="https://imgur.com/EojcfDc.png" data-thumbnail="https://imgur.com/EojcfDc.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/EojcfDc.png"
+            data-srcset="https://imgur.com/EojcfDc.png, https://imgur.com/EojcfDc.png 1.5x, https://imgur.com/EojcfDc.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/EojcfDc.png" width="100%" />
+    </a>
+<a class="lightgallery" href="https://imgur.com/nKJfVgR.png" title="https://imgur.com/nKJfVgR.png" data-thumbnail="https://imgur.com/nKJfVgR.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/nKJfVgR.png"
+            data-srcset="https://imgur.com/nKJfVgR.png, https://imgur.com/nKJfVgR.png 1.5x, https://imgur.com/nKJfVgR.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/nKJfVgR.png" width="100%" />
+    </a>
+<a class="lightgallery" href="https://imgur.com/nxk6n0B.png" title="https://imgur.com/nxk6n0B.png" data-thumbnail="https://imgur.com/nxk6n0B.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/nxk6n0B.png"
+            data-srcset="https://imgur.com/nxk6n0B.png, https://imgur.com/nxk6n0B.png 1.5x, https://imgur.com/nxk6n0B.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/nxk6n0B.png" width="100%" />
+    </a>
+<a class="lightgallery" href="https://imgur.com/SMrGymc.png" title="https://imgur.com/SMrGymc.png" data-thumbnail="https://imgur.com/SMrGymc.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/SMrGymc.png"
+            data-srcset="https://imgur.com/SMrGymc.png, https://imgur.com/SMrGymc.png 1.5x, https://imgur.com/SMrGymc.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/SMrGymc.png" width="100%" />
+    </a>
+<a class="lightgallery" href="https://imgur.com/FuEpzFx.png" title="https://imgur.com/FuEpzFx.png" data-thumbnail="https://imgur.com/FuEpzFx.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/FuEpzFx.png"
+            data-srcset="https://imgur.com/FuEpzFx.png, https://imgur.com/FuEpzFx.png 1.5x, https://imgur.com/FuEpzFx.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/FuEpzFx.png" width="100%" />
+    </a>
+<h2 id="use-case">Use case</h2>
+<p>使用 Fast-Slow Pointers 可以解決以下幾種問題：</p>
+<ul>
+<li>判斷 Linked List 有沒有 cycle</li>
+<li>找到 Linked List 的中心點</li>
+<li>計算 cycle 的長度</li>
+<li>找到 cycle 的起始點</li>
+</ul>
+<h3 id="判斷-linked-list-有沒有-cycle">判斷 Linked List 有沒有 cycle</h3>
+<p>如果 Linked List 有 cycle 的情況下 fast 與 slow 一定會相遇，而沒有 cycle 的情況下兩者不會相遇。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">ListNode</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Val</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Next</span> <span class="o">*</span><span class="nx">ListNode</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">hasCycle</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fast</span><span class="p">,</span> <span class="nx">slow</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">fast</span> <span class="o">==</span> <span class="nx">slow</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="找到-linked-list-的中心點">找到 Linked List 的中心點</h3>
+<p>因為 fast 移動的距離是 slow 的兩倍，所以當 fast 到終點時 slow 會在 Linked List 的中心點。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">findCenterPointer</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="o">*</span><span class="nx">ListNode</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fast</span><span class="p">,</span> <span class="nx">slow</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">slow</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="cycle-的長度">Cycle 的長度</h3>
+<p>當 fast 與 slow 相遇時，那相遇的點一定會在 cycle 中，這時 slow 繼續前走並計算走的步數。當 slow 再次與 fast 相遇時，走的步數就會是 cycle 的長度。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">cycleLength</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fast</span><span class="p">,</span> <span class="nx">slow</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">fast</span> <span class="o">==</span> <span class="nx">slow</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">l</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="nx">slow</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">l</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="nx">slow</span> <span class="o">==</span> <span class="nx">fast</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="nx">l</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="找到-cycle-的起始點">找到 cycle 的起始點</h3>
+<p>假設有一個 cycle 的 Linked List ，由 head 到 cycle 起始點的長度為 X ，而 cycle 的長度為 Y ，可以得知整個 Linked List 的長度為 X + Y 。</p>
+<p>在已知 cycle 長度的情況下， 假設 pointer 1 和 pointer 2 都在 head 上，先讓 pointer 1 移動 Y 步。我們觀察一下 pointer 1 和 pointer 2 的位置， pointer 1 已經走了 Y 步，如果再走 X 步剛好遍歷過整個 Linked List 回到 cycle 的起始點，而 pointer 2 還在 head 上，所以走 X 步就會到 cycle 的起始點。</p>
+<p>我們已經知道 pointer 1 和 pointer 2 雙方只要走 X 步就可以到 cycle 的起始點並相遇，換句話說，只要讓 pointer 1 和 pointer 2 以等速移動，那雙方相遇的點就是 cycle 的起始點。</p>
+<p>整理一下步驟：<br>
+step1: 利用 Fast-Slow Pointers 找出在 cycle 相遇的點<br>
+step2: 計算 cycle 的長度為 L<br>
+step3: 一個 pointer 先從 head 往前走 L 步，另一個 pointer 在 head ，接著兩個 pointer 等速移動直到相遇</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">detectCycle</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="o">*</span><span class="nx">ListNode</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fast</span><span class="p">,</span> <span class="nx">slow</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">fast</span> <span class="o">==</span> <span class="nx">slow</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">l</span> <span class="o">:=</span> <span class="nf">cycleLen</span><span class="p">(</span><span class="nx">slow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">pnt1</span><span class="p">,</span> <span class="nx">pnt2</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="nx">l</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">pnt1</span> <span class="p">=</span> <span class="nx">pnt1</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">l</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="nx">pnt1</span> <span class="o">!=</span> <span class="nx">pnt2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">pnt1</span> <span class="p">=</span> <span class="nx">pnt1</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">pnt2</span> <span class="p">=</span> <span class="nx">pnt2</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">pnt1</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">cycleLen</span><span class="p">(</span><span class="nx">node</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">l</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">curry</span> <span class="o">:=</span> <span class="nx">node</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">curry</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">l</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curry</span> <span class="p">=</span> <span class="nx">curry</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">curry</span> <span class="o">==</span> <span class="nx">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">l</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>前面的方法在找到相遇的點後還需要額外執行 for 迴圈來尋找 cycle 長度。接下來我們用另一種與前面類似的方法但不需要尋找 cycle 長度。</p>
+<a class="lightgallery" href="https://imgur.com/gxICZFN.png" title="https://imgur.com/gxICZFN.png" data-thumbnail="https://imgur.com/gxICZFN.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://imgur.com/gxICZFN.png"
+            data-srcset="https://imgur.com/gxICZFN.png, https://imgur.com/gxICZFN.png 1.5x, https://imgur.com/gxICZFN.png 2x"
+            data-sizes="auto"
+            alt="https://imgur.com/gxICZFN.png" width="100%" />
+    </a>
+<p>在有 cycle 的情況下，假設 A 點為 Linked List 的 head ， B 點為 cycle 的起始點， C 點為 fast pointer 和 slow pointer 相遇的點。 X 為 A 點到 B 點的距離， Y 為 B 點到 C 點的距離， Z 為 C 點到 B 點的距離。</p>
+<p>會發現當 slow pointer 走了 X + Y ， fast pointer 走了 X + Y + n * (Y + Z) <em>( n 為循環的次數)</em>，在 fast pointer 移動的速度是 slow pointer 的 2 倍時可以得到 2 * (X + Y) = X + Y + n * (Y + Z) ，簡化後為 X + Y = n * (Y + Z)。因為我們想知道 B 點的位置，所以我們要得到 X 的距離，求 X 的方程式為 X = (n - 1) * Y + n * Z 。</p>
+<p>現在我們知道如何得到 X 的長度了，假設 n = 1 ，會得到 X = Z ，這代表如果我在 A 點和 C 點各放一個 pointer ，雙方以相同的速度前進，雙方會在 B 點相遇，也就是 cycle 的起始點。</p>
+<p>整理一下步驟：<br>
+step1: 利用 Fast-Slow Pointers 找出在 cycle 相遇的點<br>
+step2: 將 fast 指回 head 的位置<br>
+step3: fast 和 slow 等速往前走直到相遇</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">detectCycle</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="o">*</span><span class="nx">ListNode</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fast</span><span class="p">,</span> <span class="nx">slow</span> <span class="o">:=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">fast</span> <span class="o">==</span> <span class="nx">slow</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">fast</span> <span class="p">=</span> <span class="nx">head</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="nx">fast</span> <span class="o">!=</span> <span class="nx">slow</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">fast</span> <span class="p">=</span> <span class="nx">fast</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">slow</span> <span class="p">=</span> <span class="nx">slow</span><span class="p">.</span><span class="nx">Next</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">slow</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="related-topics-in-leetcode">Related topics in leetcode</h2>
+<ul>
+<li><a href="https://github.com/xxxVitoxxx/leetcode/blob/main/141.linked_list_cycle/main.go" target="_blank" rel="noopener noreffer ">leetcode 141</a></li>
+<li><a href="https://github.com/xxxVitoxxx/leetcode/blob/main/142.linked_list_cycle_II/main.go" target="_blank" rel="noopener noreffer ">leetcode 142</a></li>
+<li><a href="https://github.com/xxxVitoxxx/leetcode/blob/main/202.happy_number/main.go" target="_blank" rel="noopener noreffer ">leetcode 202</a></li>
+<li><a href="https://github.com/xxxVitoxxx/leetcode/blob/main/234.palindrome_linked_list/main.go" target="_blank" rel="noopener noreffer ">leetcode 234</a></li>
+<li><a href="https://github.com/xxxVitoxxx/leetcode/blob/main/876.middel_of_the_linked_list/main.go" target="_blank" rel="noopener noreffer ">leetcode 876</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.educative.io/courses/grokking-coding-interview-patterns-python/fast-and-slow-pointers-introduction" target="_blank" rel="noopener noreffer ">Fast and Slow Pointers: Introduction</a></li>
+<li><a href="https://hackmd.io/@Hsins/fast-slow-pointers" target="_blank" rel="noopener noreffer ">快慢指針（Fast-slow Pointers）</a></li>
+<li><a href="https://medium.com/@orionssl/%E6%8E%A2%E7%B4%A2-floyd-cycle-detection-algorithm-934cdd05beb9" target="_blank" rel="noopener noreffer ">探索 Floyd Cycle Detection Algorithm</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72886883" target="_blank" rel="noopener noreffer ">leetcode算法汇总 （三）快慢指针</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-10-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023/10/floyd_cycle_detection_algorithm/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" data-title="Floyd Cycle Detection Algorithm" data-hashtags="algorithm"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" data-hashtag="algorithm"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" data-title="Floyd Cycle Detection Algorithm"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" data-title="Floyd Cycle Detection Algorithm"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" data-title="Floyd Cycle Detection Algorithm" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/algorithm/">algorithm</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023/05/binary_tree/" class="prev" rel="prev" title="Binary Tree"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Binary Tree</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">continue learning</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
