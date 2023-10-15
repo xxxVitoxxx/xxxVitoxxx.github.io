@@ -179,8 +179,10 @@ func detectCycle(head *ListNode) *ListNode {
 
 - [leetcode 141](https://github.com/xxxVitoxxx/leetcode/blob/main/141.linked_list_cycle/main.go)
 - [leetcode 142](https://github.com/xxxVitoxxx/leetcode/blob/main/142.linked_list_cycle_II/main.go)
+- [leetcode 143](https://github.com/xxxVitoxxx/leetcode/blob/main/143.recorder_list/main.go)
 - [leetcode 202](https://github.com/xxxVitoxxx/leetcode/blob/main/202.happy_number/main.go)
 - [leetcode 234](https://github.com/xxxVitoxxx/leetcode/blob/main/234.palindrome_linked_list/main.go)
+- [leetcode 457](https://github.com/xxxVitoxxx/leetcode/blob/main/457.circular_array_loop/main.go)
 - [leetcode 876](https://github.com/xxxVitoxxx/leetcode/blob/main/876.middel_of_the_linked_list/main.go)
 ## Reference
 
