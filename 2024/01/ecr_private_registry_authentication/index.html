@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ECR Private Registry Authentication - vito&#39;s blog</title><meta name="Description" content=""><meta property="og:title" content="ECR Private Registry Authentication" />
+<meta property="og:description" content="ECR(Elastic Container Registry) 是一種安全、可擴充且可靠的 AWS 託管容器映像服務，每個 AWS 帳號都有一個預設的 Private ECR Registry ，本文會介紹在 EC2 環境中如何向 Private Registry 驗證 Docker 用戶端的身份，並從 Private Registry push/pull 映像檔。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" /><meta property="og:image" content="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-29T21:41:54+08:00" />
+<meta property="article:modified_time" content="2024-01-29T21:41:54+08:00" /><meta property="og:site_name" content="vito&#39;s blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/featured-image.png"/>
+<meta name="twitter:title" content="ECR Private Registry Authentication"/>
+<meta name="twitter:description" content="ECR(Elastic Container Registry) 是一種安全、可擴充且可靠的 AWS 託管容器映像服務，每個 AWS 帳號都有一個預設的 Private ECR Registry ，本文會介紹在 EC2 環境中如何向 Private Registry 驗證 Docker 用戶端的身份，並從 Private Registry push/pull 映像檔。"/>
+<meta name="application-name" content="vito&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="vito&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" /><link rel="prev" href="https://xxxVitoxxx.github.io/2023/10/floyd_cycle_detection_algorithm/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ECR Private Registry Authentication",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xxxVitoxxx.github.io\/2024\/01\/ecr_private_registry_authentication\/"
+        },"image": ["https:\/\/xxxVitoxxx.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "aws, ecr","wordcount":  255 ,
+        "url": "https:\/\/xxxVitoxxx.github.io\/2024\/01\/ecr_private_registry_authentication\/","datePublished": "2024-01-29T21:41:54+08:00","dateModified": "2024-01-29T21:41:54+08:00","publisher": {
+            "@type": "Organization",
+            "name": "vito","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xxxVitoxxx.github.io\/images\/me.png",
+                    "width":  655 ,
+                    "height":  753 
+                }},"author": {
+                "@type": "Person",
+                "name": "vito"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="vito&#39;s blog"><span class="header-title-pre"><i class='fa-solid fa-desktop' aria-hidden='true'></i> </span>vito&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ECR Private Registry Authentication</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/posts/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>vito</a></span>&nbsp;<span class="post-category">included in <a href="/categories/aws/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>aws</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-29">2024-01-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;255 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/2024/01/ecr_private_registry_authentication/featured-image.png"
+        data-srcset="/2024/01/ecr_private_registry_authentication/featured-image.png, /2024/01/ecr_private_registry_authentication/featured-image.png 1.5x, /2024/01/ecr_private_registry_authentication/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/2024/01/ecr_private_registry_authentication/featured-image.png"
+        title="/2024/01/ecr_private_registry_authentication/featured-image.png" width="1200" height="600" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#如何在-ec2-上從-private-registry-pushpull-映像檔">如何在 EC2 上從 Private Registry push/pull 映像檔</a>
+      <ul>
+        <li><a href="#aws-cli">AWS CLI</a></li>
+        <li><a href="#http-api">HTTP API</a></li>
+        <li><a href="#amazon-ecr-credential-helper">Amazon ECR Credential Helper</a>
+          <ul>
+            <li><a href="#注意事項">注意事項</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#總結">總結</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>ECR(Elastic Container Registry) 是一種安全、可擴充且可靠的 AWS 託管容器映像服務，每個 AWS 帳號都有一個預設的 Private ECR Registry ，本文會介紹在 EC2 環境中如何向 Private Registry 驗證 Docker 用戶端的身份，並從 Private Registry push/pull 映像檔。</p>
+<h2 id="introduction">Introduction</h2>
+<p>前陣子重新建置測試環境，卻發現 EC2 時常會拉不到新的映像檔，詳細了解後，發現是因為我們取得的 token 是有時效性的，導致當 token 過期就無法從 Private Registry 拉取映像檔，這邊介紹了幾種取得驗證 token 的方法並教你如何避免發生 token 過期的問題。</p>
+<h2 id="如何在-ec2-上從-private-registry-pushpull-映像檔">如何在 EC2 上從 Private Registry push/pull 映像檔</h2>
+<p>在 EC2 有 ECR 相關 policy 且已有安裝 docker 的環境下，有以下三種方法可以達到目的。</p>
+<ol>
+<li>AWS CLI</li>
+<li>HTTP API</li>
+<li>Amazon ECR Credential Helper</li>
+</ol>
+<h3 id="aws-cli">AWS CLI</h3>
+<p>透過 AWS CLI 的 <a href="https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html" target="_blank" rel="noopener noreffer ">get-login-password</a> 指令將身份驗證的 token 傳遞給 <code>docker login</code> 指令，並指定要驗證的 ECR URI 。</p>
+<p><code>aws ecr get-login-password | docker login --username AWS --password-stdin {account_id}.dkr.ecr.ap-northeast-1.amazonaws.com</code></p>
+<p>執行完指令後，查看 <code>/home/user/.docker/config.json</code> 會有一組 token ，docker client 在 push/pull 映像檔時，就會拿這組 token 去驗證。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;auths&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&#34;&lt;account_id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&#34;auth&#34;</span><span class="p">:</span> <span class="s2">&#34;******************&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>透過 CLI 取得的 token 其時效性只有 12 小時</p>
+</blockquote>
+<h3 id="http-api">HTTP API</h3>
+<p>先使用 CLI 取得 token 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TOKEN=$(aws ecr get-authorization-token --output text --query &#39;authorizationData[].authorizationToken&#39;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>呼叫 ECR API 時帶入 token 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -i -H &#34;Authorization: Basic $TOKEN&#34; https://{account_id}.dkr.ecr.{region}.amazonaws.com/v2/{repository}/tags/list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="amazon-ecr-credential-helper">Amazon ECR Credential Helper</h3>
+<p>依照環境<a href="https://github.com/awslabs/amazon-ecr-credential-helper?tab=readme-ov-file#installing" target="_blank" rel="noopener noreffer ">安裝</a> credential helper 後並更新 <code>/home/user/.docker/config.json</code> 內容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;credHelpers&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&#34;public.ecr.aws&#34;</span><span class="p">:</span> <span class="s2">&#34;ecr-login&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&#34;&lt;account_id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com&#34;</span><span class="p">:</span> <span class="s2">&#34;ecr-login&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新完 <code>config.json</code> ，就可以直接 push/pull ，不用執行 <code>docker login</code> ，也不用擔心 token 過期的問題，因為 <code>ecr-login</code> 會告訴 docker client 從 credential helper 拿取 token ，而 credential helper 會自動幫你更新過期的 token ，避免發生過期的問題。</p>
+<h4 id="注意事項">注意事項</h4>
+<p>若原先是用 <code>get-login-password</code> 取得 token ，想轉換成 credential helper 時，需執行 <code>docker logout</code> 否則 docker client 依舊會使用原有的 token 去做驗證的動作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker logout {account_id}.dkr.ecr.{region}.amazonaws.com/{repository}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="總結">總結</h2>
+<p>以上三種方式皆可以取得驗證 Private Registry 的 token ，而 CLI 與 API 的方法都是透過 <code>get-login-password</code> 取得，都是有時效性的，想避免 token 過期，就直接使用 credential helper 吧。</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_tw/AmazonECR/latest/userguide/registry_auth.html" target="_blank" rel="noopener noreffer ">Private registry authentication</a></li>
+<li><a href="https://mgufrone.medium.com/ways-to-authenticate-for-pull-push-private-container-images-from-aws-21dacabee143" target="_blank" rel="noopener noreffer ">Ways to Authenticate for Pull/Push Private Container Images from AWS</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-29</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2024/01/ecr_private_registry_authentication/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" data-title="ECR Private Registry Authentication" data-hashtags="aws,ecr"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" data-hashtag="aws"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" data-title="ECR Private Registry Authentication"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" data-title="ECR Private Registry Authentication"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://xxxVitoxxx.github.io/2024/01/ecr_private_registry_authentication/" data-title="ECR Private Registry Authentication" data-image="featured-image.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">aws</a>,&nbsp;<a href="/tags/ecr/">ecr</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023/10/floyd_cycle_detection_algorithm/" class="prev" rel="prev" title="Floyd Cycle Detection Algorithm"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Floyd Cycle Detection Algorithm</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">continue learning</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2024</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
